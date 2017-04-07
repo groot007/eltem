@@ -1,0 +1,101 @@
+@import "vars";
+@import "fonts";
+@import "_reset";
+
+body input:focus{
+  border-color: $orange;
+  outline: none;
+}
+body input:focus:required:invalid,
+body textarea:focus:required:invalid{
+  color: #ccc;
+}
+body input:required:valid,
+body textarea:required:valid{
+  color: #ccc;
+}
+
+html, body{
+  height: 100%;
+}
+
+body{
+  font-size: 16px;
+  min-width: 320px;
+  height: 100%;
+  position: relative;
+  line-height: 1.75;
+  font-family: $default-font;
+  font-style: normal;
+  // overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+.img-responsive{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.row{
+  padding: 0;
+}
+
+a{
+  color: #fff;
+  position: relative;
+  transition: all .3s ease;
+  &.underline.zeroclipboard-is-hover{
+    &:after{
+      width: 100%;
+    }
+  }
+  &.underline:hover{
+    &:after{
+      width: 100%;
+    }
+  }
+  &.underline:after{
+    content: "";
+    display: block;
+    width: 0px;
+    height: 1px;
+    background: $orange;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all .4s ease-in-out;
+    margin-top: 0px;
+  }
+  &:hover, &:focus{
+    outline: none;
+    text-decoration: none;
+    color: #fff;
+  }
+  &:active{
+    outline: none;
+  }
+}
+
+
+*::-webkit-input-placeholder{
+  color: #fff;
+  opacity: 1;
+}
+
+*:-moz-placeholder{
+  color: #fff;
+  opacity: 1;
+}
+
+*::-moz-placeholder{
+  color: #fff;
+  opacity: 1;
+}
+*:-ms-input-placeholder{
+  color: #fff;
+  opacity: 1;
+}
