@@ -14,6 +14,7 @@ var gulp           = require('gulp'),
 		ftp            = require('vinyl-ftp'),
 		gulpImports = require('gulp-imports'),
 		combineMq = require('gulp-combine-mq'),
+		iconfont = require('gulp-iconfont'),
 		notify         = require("gulp-notify");
 
 
@@ -58,7 +59,7 @@ gulp.task('sass', function() {
 
 gulp.task('watch', ['sass', 'scripts', 'browser-sync'], function() {
 	gulp.watch('app/sass/**/*.scss', ['sass']);
-	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['scripts']);
+	gulp.watch(['app/js/common.js'], ['scripts']);
 	gulp.watch('app/*.html', browserSync.reload);
 	gulp.watch('app/*.php', browserSync.reload);
 });
