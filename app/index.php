@@ -99,7 +99,13 @@
 					  <div class="col-lg-7">
 						<!-- start .notebook -->
 						<div class="notebook">
-
+							<!-- start .video -->
+							<div class="video">
+								<video  autoplay muted  preload="none" loop>
+									<source src="video/emaled.mp4"/>
+								</video>
+							</div>
+							 <!-- end .video -->
 						</div>
 						 <!-- end .notebook -->
 					  </div>
@@ -240,65 +246,84 @@
 				</a>
 				 <!-- end .arrow-down -->
 				<!-- start .equip-slider -->
-				<div class="equip-slider">
+				<div class="equip-slider slider">
 					<!-- start .slide -->
 					<div class="slide">
-						<!-- start .preview -->
-						<div class="preview">
-							<!-- start .equip-unit-slider -->
-							<div class="equip-unit-slider">
-								<!-- start .slide -->
-								<a class="slide" href="img/slider/emaled-1.jpg" data-inf="Эмалед 100п" ><img src="img/slider/emaled-1.jpg" alt="" /></a>
-								<a class="slide" href="img/slider/emaled-2.jpg" data-inf="Эмалед 300п"><img src="img/slider/emaled-2.jpg" alt="" /></a>
-								<a class="slide" href="img/slider/emaled-3.jpg" data-inf="Эмалед 500п"><img src="img/slider/emaled-3.jpg" alt="" /></a>
-								<a class="slide" href="img/slider/emaled-4.jpg" data-inf="Эмалед 200п"><img src="img/slider/emaled-4.jpg" alt="" /></a>
-								 <!-- end .slide -->
+						<!-- start .main-cont -->
+						<div class="main-cont">
+							<!-- start .preview -->
+							<div class="preview">
+								<!-- start .equip-unit-slider -->
+								<div class="equip-unit-slider">
+									<!-- start .slide -->
+									<a class="slide" href="img/slider/emaled-1.jpg" data-inf="Эмалед 100п" ><img src="img/slider/emaled-1.jpg" alt="" /></a>
+									<a class="slide" href="img/slider/emaled-2.jpg" data-inf="Эмалед 300п"><img src="img/slider/emaled-2.jpg" alt="" /></a>
+									<a class="slide" href="img/slider/emaled-3.jpg" data-inf="Эмалед 500п"><img src="img/slider/emaled-3.jpg" alt="" /></a>
+									<a class="slide" href="img/slider/emaled-4.jpg" data-inf="Эмалед 200п"><img src="img/slider/emaled-4.jpg" alt="" /></a>
+									 <!-- end .slide -->
+								</div>
+								 <!-- end .equip-unit-slider -->
 							</div>
-							 <!-- end .equip-unit-slider -->
+							 <!-- end .preview -->
+							<!-- start .equip-inf -->
+							<div class="equip-inf">
+								<h3>Светильники ЭМАЛЕД</h3>
+								<!-- start .deskr-block -->
+								<div class="deskr-block dashed-bdr">
+									<h4>Описание</h4>
+									<p class="deskr">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+										veniam, quis nostrud exercitation ullamco laboris
+									</p>
+								</div>
+								 <!-- end .deskr-block -->
+								<!-- start .deskr-block -->
+								<div class="deskr-block dashed-bdr">
+									<h4>Назначение</h4>
+									<p class="deskr">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+										veniam, quis nostrud exercitation ullamco laboris
+									</p>
+								</div>
+								 <!-- end .deskr-block -->
+								<!-- start .deskr-block -->
+								<div class="deskr-block dashed-bdr">
+									<h4>Варианты сборки</h4>
+									<ul>
+										<li><span class="icon icon-ceiling"></span><span>потолочные одно-,двух-, трёх- купольные </span></li>
+										<li><span class="icon icon-camera"></span><span>с видео камерой и без </span></li>
+										<li><span class="icon icon-battery"></span><span>с аварийным питанием и без</span></li>
+										<li><span class="icon icon-wall"></span><span>настенный или передвижной</span></li>
+									</ul>
+								</div>
+								 <!-- end .deskr-block -->
+								<!-- start .deskr-block -->
+								<div class="deskr-block">
+									<h4>Товар в наличии</h4>
+									<p>Средний срок службы светодиодов  более 60 000 часов или 2500 суток </p>
+									<a href="#" class="btn">Оформить заказ</a>
+								</div>
+							</div>
+							 <!-- end .equip-inf -->
 						</div>
-						 <!-- end .preview -->
-						<!-- start .equip-inf -->
-						<div class="equip-inf">
-							<h3>Светильники ЭМАЛЕД</h3>
-							<!-- start .deskr-block -->
-							<div class="deskr-block dashed-bdr">
-								<h4>Описание</h4>
-								<p class="deskr">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-									veniam, quis nostrud exercitation ullamco laboris
-								</p>
+						 <!-- end .main-cont -->
+						<!-- start .how-it-works -->
+						<div class="how-it-works">
+							<h2 class="underline">Как происходит <br /> монтаж потолочного светильника</h2>
+							<!-- start .container -->
+							<div class="container">
+								<!-- start .video-wrap -->
+								<div class="video-wrap corner-square smaller">
+									<iframe width="854" height="480" src="https://www.youtube.com/embed/lA40hndOB3M" frameborder="0" allowfullscreen></iframe>
+								</div>
+								 <!-- end .video-wrap -->
 							</div>
-							 <!-- end .deskr-block -->
-							<!-- start .deskr-block -->
-							<div class="deskr-block dashed-bdr">
-								<h4>Назначение</h4>
-								<p class="deskr">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-									veniam, quis nostrud exercitation ullamco laboris
-								</p>
-							</div>
-							 <!-- end .deskr-block -->
-							<!-- start .deskr-block -->
-							<div class="deskr-block dashed-bdr">
-								<h4>Варианты сборки</h4>
-								<ul>
-									<li><span class="icon icon-ceiling"></span><span>потолочные одно-,двух-, трёх- купольные </span></li>
-									<li><span class="icon icon-camera"></span><span>с видео камерой и без </span></li>
-									<li><span class="icon icon-battery"></span><span>с аварийным питанием и без</span></li>
-									<li><span class="icon icon-wall"></span><span>настенный или передвижной</span></li>
-								</ul>
-							</div>
-							 <!-- end .deskr-block -->
-							<!-- start .deskr-block -->
-							<div class="deskr-block">
-								<h4>Товар в наличии</h4>
-								<p>Средний срок службы светодиодов  более 60 000 часов или 2500 суток </p>
-								<a href="#" class="btn">Оформить заказ</a>
-							</div>
+							 <!-- end .container -->
 						</div>
-						 <!-- end .equip-inf -->
+						 <!-- end .how-it-works -->
+
 					</div>
 					 <!-- end .slide -->
 					<!-- start .slide -->
@@ -488,23 +513,307 @@
 		</section>
 		 <!-- end .equipment -->
 		<!-- start .how-it-works -->
-		<section class="how-it-works">
-			<h2 class="underline">Как происходит <br /> монтаж потолочного светильника</h2>
+		<!-- <section class="how-it-works"> -->
+			<!-- <h2 class="underline">Как происходит <br /> монтаж потолочного светильника</h2> -->
+			<!-- start .container -->
+			<!-- <div class="container"> -->
+				<!-- start .video-wrap -->
+				<!-- <div class="video-wrap corner-square smaller"> -->
+					<!-- <iframe width="854" height="480" src="https://www.youtube.com/embed/lA40hndOB3M" frameborder="0" allowfullscreen></iframe> -->
+				<!-- </div> -->
+				 <!-- end .video-wrap -->
+			<!-- </div> -->
+			 <!-- end .container -->
+		<!-- </section> -->
+		 <!-- end .how-it-works -->
+		<!-- start .catalog-form -->
+		<section class="get-catalog">
 			<!-- start .container -->
 			<div class="container">
-				<!-- start .video-wrap -->
-				<div class="video-wrap corner-square smaller">
-					<iframe width="854" height="480" src="https://www.youtube.com/embed/lA40hndOB3M" frameborder="0" allowfullscreen></iframe>
+				<!-- start .col-lg-6 -->
+				<div class="col-lg-6 col-catalog">
+					<div class="wrap-catalog"><img src="img/catalog.png" alt="Каталог" /></div>
 				</div>
-				 <!-- end .video-wrap -->
+				 <!-- end .col-lg-6 -->
+				 <!-- start .col-lg-5 -->
+				 <div class="col-lg-5">
+					<form action="" class="get-catalog-form">
+						<h3>Скачайте полный каталог
+хирургического оборудования:</h3>
+						<div class="group-input">
+							<i class="fa fa-user" aria-hidden="true"></i>
+							<input type="text" placeholder="Имя" name="name" required/>
+						</div>
+						<div class="group-input">
+							<i class="fa fa-phone" aria-hidden="true"></i>
+							<input type="text" placeholder="Телефон" name="phone" class="phone" required/>
+						</div>
+						<div class="group-input">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+							<input type="text" placeholder="E-mail" name="email" required/>
+						</div>
+						<button class="btn" type="submit">Получить полный каталог</button>
+						<p>Ваши данные конфиденциальны</p>
+						<?php echo $hidden_inpunt; ?>
+					</form>
+				 </div>
+				  <!-- end .col-lg-5 -->
 			</div>
 			 <!-- end .container -->
+		</section>
+		 <!-- end .catalog-form -->
+		<!-- start .example-works -->
+		<section class="example-works">
+			<!-- start .container -->
+			<div class="container">
+				<!-- start .col-lg-6 -->
+				<div class="col-lg-6">
+					<!-- start .underline -->
+					<h2 class="underline">Для кого мы работаем?</h2>
+					 <!-- end .underline -->
+					 <!-- start .list-clients -->
+					 <ul class="list-clients">
+					 	<li>Государственные медицинские учреждения </li>
+					 	<li>Бюджетные лечебно-профилактические учреждения
+(больницы, поликлиники), </li>
+					 	<li>Центральные районные медицинские центры, </li>
+					 	<li>НИИ федерального подчинения медицинской направленности (институт кардиологии, институт туберкулеза,
+</li>
+					 	<li>Институт онкологии, </li>
+					 	<li>Институт хирургии) родильные дома, женские
+консультации</li>
+					 </ul>
+					  <!-- end .list-clients -->
+				</div>
+				 <!-- end .col-lg-6 -->
+				<!-- start .col-lg-6 -->
+				<div class="col-lg-6">
+					<!-- start .works-slider -->
+					<div class="works-slider slider">
+						<a href="img/example-works/example-1.jpg"><img src="img/example-works/example-1.jpg" alt="Государственные медицинские учреждения" /></a>
+						<a href="img/example-works/example-1.jpg"><img src="img/example-works/example-1.jpg" alt="Государственные медицинские учреждения" /></a>
+						<a href="img/example-works/example-1.jpg"><img src="img/example-works/example-1.jpg" alt="Государственные медицинские учреждения" /></a>
+						<a href="img/example-works/example-1.jpg"><img src="img/example-works/example-1.jpg" alt="Государственные медицинские учреждения" /></a>
+					</div>
+					 <!-- end .works-slider -->
+				</div>
+				 <!-- end .col-lg-6 -->
+			</div>
+			 <!-- end .container -->
+		</section>
+		 <!-- end .example-works -->
+
+		<!-- start .reviews -->
+		<section class="reviews">
+			<!-- start .container -->
+			<div class="container">
+				<h2 class="underline">Отзывы наших клиентов</h2>
+				<blockquote>
+				<i class="fa fa-quote-left" aria-hidden="true"></i>
+				Короче, пользуйтесь услугами ЭЛТЕМ <br />и больше не тратьте время и деньги на поиск!</blockquote>
+				<!-- start .row -->
+				<div class="row">
+					<!-- start .col-lg-6 -->
+					<div class="col-lg-6">
+						<!-- start .video-wrap -->
+						<div class="video-wrap corner-square smaller">
+							<iframe width="854" height="480" src="https://www.youtube.com/embed/lA40hndOB3M" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<ul>
+							<li><strong>Ситуация</strong><span>Lorem ipsum dolor sit amet, consectetur</span></li>
+							<li><strong>Решение</strong><span>adipisicing elit, sed do eiusmod tempor</span></li>
+							<li><strong>Результат</strong><span>incididunt ut labore et</span></li>
+						</ul>
+						 <!-- end .video-wrap -->
+					</div>
+					 <!-- end .col-lg-6 -->
+					<!-- start .col-lg-6 -->
+					<div class="col-lg-6">
+						<!-- start .video-wrap -->
+						<div class="video-wrap corner-square smaller">
+							<iframe width="854" height="480" src="https://www.youtube.com/embed/lA40hndOB3M" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<ul>
+							<li><strong>Ситуация</strong><span>Lorem ipsum dolor sit amet, consectetur</span></li>
+							<li><strong>Решение</strong><span>adipisicing elit, sed do eiusmod tempor</span></li>
+							<li><strong>Результат</strong><span>incididunt ut labore et</span></li>
+						</ul>
+						 <!-- end .video-wrap -->
+					</div>
+					 <!-- end .col-lg-6 -->
+				</div>
+				 <!-- end .row -->
+			</div>
+			 <!-- end .container -->
+		</section>
+		 <!-- end .reviews -->
+		<!-- start .services -->
+		<section class="services">
+			<!-- start .container -->
+			<div class="container">
+				<!-- start .underline -->
+				<h2 class="underline">Оснащаем от одного кабинета <br />
+до медицинского центра</h2>
+				 <!-- end .underline -->
+				 <p>Как говорится, не бывает моноболезней - если что-то болит, это влияет на всю систему организма в целом. 
+<br />Поэтому в поставке оборудования для лечебных учреждений мы используем комплексный <br />
+подход ко всем направлениям.</p>
+				<!-- start .services-items -->
+				<div class="services-items">
+					<!-- start .service-item -->
+					<div class="service-item">
+						<!-- start .square-wrap -->
+						<div class="square-wrap">
+							<div class="square">
+								<span class="icon icon-obstetrics"></span>
+							</div>
+						</div>
+						 <!-- end .square-wrap-->
+						<h5>Акушерство</h5>
+					</div>
+					 <!-- end .service-item -->
+					 <!-- start .service-item -->
+					<div class="service-item">
+						<!-- start .square-wrap -->
+						<div class="square-wrap">
+							<div class="square">
+								<!-- <span class="icon icon-obstetrics"></span> -->
+							</div>
+						</div>
+						 <!-- end .square-wrap-->
+						<h5>Стерилизация и дезинфекция</h5>
+					</div>
+					 <!-- end .service-item -->
+					 <!-- start .service-item -->
+					<div class="service-item">
+						<!-- start .square-wrap -->
+						<div class="square-wrap">
+							<div class="square">
+								<span class="icon icon-anesthesia"></span>
+							</div>
+						</div>
+						 <!-- end .square-wrap-->
+						<h5>Анестизиология и реанимация</h5>
+					</div>
+					 <!-- end .service-item -->
+					 <!-- start .service-item -->
+					<div class="service-item">
+						<!-- start .square-wrap -->
+						<div class="square-wrap">
+							<div class="square">
+								<span class="icon icon-xray"></span>
+							</div>
+						</div>
+						 <!-- end .square-wrap-->
+						<h5>Рентгенология и томография</h5>
+					</div>
+					 <!-- end .service-item -->
+				</div>
+				 <!-- end .services-items -->
+				<a href="#" class="btn bordered">Показать все наши направления</a>
+			</div>
+			 <!-- end .container -->
+		</section>
+		 <!-- end .services -->
+
+		<!-- start .call-me -->
+		<section class="call-me">
+			<div class="container">
+			<!-- start .col-lg-6 -->
+			<div class="col-lg-6 text-left">
+				<!-- start .underline -->
+				<h2 class="underline">Не нашли, что искали?</h2>
+				 <!-- end .underline -->
+				<!-- start .with-bg -->
+				<p class="with-bg">Налейте сабе чай-кофе, пока мы бесплатно
+подберем лучшее оборудование <br />
+по соотношению цены/качества <br />
+под Вашу задачу! </p>
+				 <!-- end .with-bg -->
+				 <h2>Мы в этом профи!</h2>
+			</div>
+			 <!-- end .col-lg-6 -->
+			 <!-- start .col-lg-6 align-right -->
+			 <div class="col-lg-6 text-right">
+			 	<form action="" class="get-catalog-form">
+					<p>Позвоните по телефону</p>
+					<!-- start .phone -->
+					<p class="phone">+7 (383) 123-56-89</p>
+					 <!-- end .phone -->
+					 <p>или оставьте заявку <br />
+<span class="upper">И МЫ ВАМ СРАЗУ  ПЕРЕЗВОНИМ</span></p>
+
+					<div class="group-input">
+						<!-- <i class="fa fa-phone" aria-hidden="true"></i> -->
+						<input type="text" placeholder="Введите свой номер телефона" name="phone" class="phone" required/>
+					</div>
+					<button class="btn" type="submit">Перезвоните мне</button>
+					<?php echo $hidden_inpunt; ?>
+				</form>
+			 </div>
+			  <!-- end .col-lg-6 align-right -->
+			</div>
+		</section>
+		 <!-- end .call-me -->
+		<!-- start .steps -->
+		<section class="steps">
+			<!-- start .underline -->
+			<h2 class="underline">Как происходит работа?</h2>
+			 <!-- end .underline -->
+			<div class="steps-wrap">
+				<!-- start .container -->
+				<div class="container">
+					<!-- start .col-lg-6 -->
+					<div class="col-lg-6">
+						<!-- start .step -->
+						<div class="step">
+							<span class="step-number">01.</span>
+							<!-- start .step-inf -->
+							<p class="step-inf"> <strong>Оставляете заявку,</strong> <br />
+	или пишете на нашу почту, или <br />
+	перезваниваете сами </p>
+							 <!-- end .step-inf -->
+						</div>
+						 <!-- end .step -->
+						 <!-- start .step -->
+						<div class="step">
+							<span class="step-number">01.</span>
+							<!-- start .step-inf -->
+							<p class="step-inf"> <strong>Оставляете заявку,</strong> <br />
+	или пишете на нашу почту, или <br />
+	перезваниваете сами </p>
+							 <!-- end .step-inf -->
+						</div>
+						 <!-- end .step -->
+						 <!-- start .step -->
+						<div class="step">
+							<span class="step-number">01.</span>
+							<!-- start .step-inf -->
+							<p class="step-inf"> <strong>Оставляете заявку,</strong> <br />
+	или пишете на нашу почту, или <br />
+	перезваниваете сами </p>
+							 <!-- end .step-inf -->
+						</div>
+						 <!-- end .step -->
+						 <!-- start .step -->
+						<div class="step">
+							<span class="step-number">01.</span>
+							<!-- start .step-inf -->
+							<p class="step-inf"> <strong>Оставляете заявку,</strong> <br />
+	или пишете на нашу почту, или <br />
+	перезваниваете сами </p>
+							 <!-- end .step-inf -->
+						</div>
+						 <!-- end .step -->
+					</div>
+					 <!-- end .col-lg-6 -->
+				 </div>
+				 <!-- end .container -->
+				<div class="right-bg"></div>
+			</div>
 
 		</section>
-		 <!-- end .how-it-works -->
-
-
-
+		 <!-- end .steps -->
 		<!-- POPUP -->
 		<form id="test-form" action="mail.php" class="pop-up mfp-hide white-popup-block">
 			<h2>Заказать обратный звонок</h2>

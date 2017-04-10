@@ -96,7 +96,6 @@ $(".equip-slider").slick({
   }
 });
 
-
 // end
 
 // ITEM slider
@@ -145,5 +144,17 @@ $(document).on("click", ".equipment .tabs .tab", function(e) {
 
 // end
 
+
+
+// example works slider
+$(".example-works .works-slider").slick({
+    arrows: true,
+    infinite: true,
+    swipe: false,
+    nextArrow: '<i class="fa fa-angle-right"></i>',
+    prevArrow: '<i class="fa fa-angle-left"></i>',
+    waitForAnimate: false,
+  });
+// end
 
 });

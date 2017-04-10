@@ -47,7 +47,8 @@ h2{
   font-size: 42px;
   line-height: 46px;
   position: relative;
-  font-weight: 600;
+  font-weight: 700;
+  color: #333;
   display: inline-block;
   &.underline{
 
@@ -68,6 +69,7 @@ h2{
   }
 }
 section{
+  position: relative;
   text-align: center;
 }
 img{
@@ -89,15 +91,21 @@ a{
     outline: none;
   }
 }
-
-a.btn{
+ button.btn{
+  border: none;
+  overflow: hidden;
+  position: relative;
+}
+.btn{
   background: $main-color;
   padding: 8px 10px;
   display: inline-block;
   overflow: hidden;
   color: #fff;
+  outline: none;
   border-radius: 5px;
   font-size: 16px;
+  transition: all .4s ease-in-out;
   &.bordered{
     background: transparent;
     border: 1px solid $main-color;
@@ -151,6 +159,12 @@ input[type="text"]{
 
 .text-center{
   text-align: center;
+}
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
 }
 
 .corner-square{
@@ -288,11 +302,7 @@ input[type="text"]{
     &:before{
       transition: all .4s ease-in-out;
     }
-    &.active{
-       &:hover{
-         border: 1px solid $main-darker;
-       }
-    }
+
     &:hover{
       cursor: pointer;
       .equip-kind{
@@ -329,11 +339,17 @@ input[type="text"]{
       }
     }
    &.active{
+      &:hover{
+        .equip-kind{
+           border: 1px solid  $main-darker;
+        }
+      }
       .equip-kind{
         border: 1px solid  $main-color;
         background: $main-color;
         color: #fff;
         &:hover, &:focus{
+          border: 1px solid  $main-darker;
           outline: none;
           text-decoration: none;
         }
@@ -430,4 +446,89 @@ input[type="text"]{
 
 .dashed-bdr{
   border-bottom: 1px dashed #666;
+}
+
+
+.slider .fa{
+      position: absolute;
+      width: 50px;
+      display: inline-block;
+      height: 50px;
+      background: $main-color;
+      top: 22%;
+      margin-top: -85px;
+      font-size: 55px;
+      line-height: 48px;
+      color: #fff;
+      z-index: 999;
+      transition: all .3s ease-in-out;
+      // @include custom{
+      //   margin-top: -45px;
+      // }
+      &:hover{
+        background: $main-darker;
+      }
+      &:hover{
+        cursor: pointer;
+        // color: #fff;
+      }
+      &.fa-angle-right{
+        right: -10px;
+        letter-spacing: -8px;
+      }
+      &.fa-angle-left{
+        left: -10px;
+      }
+    }
+
+form{
+    padding: 50px 30px;;
+    background: rgba(255,255,255, .4);
+    color: #fff;
+    border: 1px solid #fff;
+    h3{
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 24px;
+      margin-bottom: 35px;
+    }
+    .group-input{
+      width: 290px;
+      margin: 15px auto;
+      position: relative;
+      .fa{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: #999;
+        font-size: 24px;
+      }
+    }
+    input{
+      width: 100%;
+      height: 45px;
+      font-size: 16px;
+      padding-right: 40px;
+      // margin-bottom: 15px;
+      display: block;
+    }
+    button{
+      width: 250px;
+      margin: 35px auto 10px auto;
+    }
+  }
+
+.with-bg{
+  position: relative;
+  z-index: 1;
+  &:before{
+    content: "";
+    width: 200px;
+    height: 200px;
+    background: $main-color;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
 }

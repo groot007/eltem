@@ -1,5 +1,6 @@
 @import "bourbon";
 @include font-face("OpenSans", "../fonts/OpenSans/OpenSansExtraBold/OpenSansExtraBold", 800, $file-formats: eot woff ttf)
+@include font-face("OpenSans", "../fonts/OpenSans/OpenSansBold/OpenSansBold", 700, $file-formats: eot woff ttf)
 @include font-face("OpenSans", "../fonts/OpenSans/OpenSansSemiBold/OpenSansSemiBold", 600, $file-formats: eot woff ttf)
 @include font-face("OpenSans", "../fonts/OpenSans/OpenSansLightItalic/OpenSansLightItalic", 300, italic, $file-formats: eot woff ttf)
 @include font-face("OpenSans", "../fonts/OpenSans/OpenSansLight/OpenSansLight", $file-formats: eot woff ttf)
