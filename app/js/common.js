@@ -157,4 +157,15 @@ $(".example-works .works-slider").slick({
   });
 // end
 
+// brand slider
+$(".statistic .slider-brand").slick({
+    arrows: true,
+    infinite: true,
+    swipe: false,
+    nextArrow: '<i class="fa fa-angle-right"></i>',
+    prevArrow: '<i class="fa fa-angle-left"></i>',
+    waitForAnimate: false,
+  });
+// end
+
 });

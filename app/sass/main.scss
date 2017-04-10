@@ -100,7 +100,7 @@ header{
 			color: $main-darker;
 		}
 		h1{
-			margin-top: 80px;
+			margin-top: 60px;
 			margin-bottom: 30px;
 		}
 		h3{
@@ -664,7 +664,7 @@ header{
 
 .steps{
 	padding: 80px 0 60px 0;
-	height: 800px;
+
 	h2{
 		margin-bottom: 50px;
 	}
@@ -682,13 +682,35 @@ header{
 			border: 8px solid $border-color;
 			margin-bottom: 20px;
 			position: relative;
-			p{
+			text-align: left;
+			.step-number{
+				font-size: 120px;
+				line-height: 140px;
+				font-family: "Impact";
+				display: inline-block;
+				margin-left: 10px;
+				// font-weight: 700;
+				color: $main-color;
+				position: relative;
+				&:after{
+					content: "";
+					width: 20px;
+					height: 20px;
+					display: block;
+					background: $main-color;
+					position: absolute;
+					right: -30px;
+					bottom: 20px;
+				}
+			}
+			.step-inf{
 				position: absolute;
+				padding: 25px 0;
 				background: #fff;
 				text-align: left;
 				display: inline-block;
-				right: -150px;
-				top: 50px;
+				right: -210px;
+				top: 13px;
 			}
 		}
 	}
@@ -706,6 +728,186 @@ header{
 		height: 100%;;
 	}
 }
+
+.statistic{
+	padding: 80px 0;
+	background: url(../img/eltem-today-bg.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	.va{
+		&:before{
+			display: inline-block;
+		    height: 100%;
+		    vertical-align: middle;
+		    content: "";
+		}
+	}
+	.wrap{
+		display: inline-block;
+		vertical-align: middle;
+		p{
+			font-weight: 700;
+		}
+		.number{
+			line-height: 110px;
+			font-family: "Impact";
+			font-size: 120px;
+		}
+	}
+	.statistic-wrap{
+		margin-top: 60px;
+	}
+	.left-block, .right-block{
+		float: left;
+	}
+	.left-block{
+		width:22%;
+		margin-right: 3%;
+		.peoples{
+			height: 400px;
+			width: 100%;
+			border: 15px solid $main-color;
+			background: #fff;
+			color: $main-color;
+		}
+	}
+	.right-block{
+		width: 75%;
+	}
+	.right-block{
+		.top-row{
+			margin-bottom: 20px;
+			height: 190px;
+			.years, .brands{
+				float: left;
+			}
+			.years{
+				width: 30%;
+				margin-right: 3%;
+				height: 100%;
+				color: #fff;
+				background: $main-color;
+			}
+			.brands{
+				text-align: left;
+				color: $main-color;
+				background: #fff;
+				height: 100%;
+				width: 67%;
+				padding: 30px 20px;
+				.wrap{
+					text-align: center;
+					float: left;
+					width: 30%;
+					margin-right: 10%;
+				}
+				.slider{
+					width: 60%;
+					height: 100%;
+					// line-height: 100px;
+					float: left;
+					.slide{
+						height: 140px;
+						text-align: center;
+						&:before{
+							display: inline-block;
+						    height: 100%;
+						    vertical-align: middle;
+						    content: "";
+						}
+						img{
+							display: inline-block;
+							vertical-align: middle;
+						}
+					}
+					.fa{
+						background: transparent;
+						color: $main-color;
+						top: 100%;
+					}
+				}
+			}
+		}
+		.bottom-row{
+			height: 190px;
+			.users, .firms{
+				float: left;
+				height: 100%;
+			}
+			.users{
+				background: #fff;
+				padding: 10px;
+				color: $main-color;
+				width: 67%;
+				margin-right: 3%;
+				.border-wrap{
+					width: 100%;
+					height: 100%;
+					border: 1px solid $main-color;
+					text-align: center;
+					padding: 0 15px;
+					&.va{
+						&:before{
+							height: auto;
+						}
+					}
+					.wrap{
+						&:after{
+							content: "";
+							display: block;
+							width: 0;
+							clear: both;
+						}
+					}
+					p{
+						text-align: left;
+						display: inline-block;
+						width: 32%;
+						line-height: 26px;
+						vertical-align: top;
+					}
+					.number{
+						width:66%;
+						margin-top: -5px;
+						margin-right: -20px;
+						display: inline-block;
+					}
+				}
+			}
+			.firms{
+				background: $main-color;
+				color: #fff;
+				width: 30%;
+				padding: 10px;
+				.border-wrap{
+					width: 100%;
+					height: 100%;
+					border: 1px solid #fff;
+					position: relative;
+					&:before, &:after{
+						content: "";
+						display: block;
+						position: absolute;
+						left: 50%;
+						width: 50%;
+						height: 10px;
+						margin-left: -25%;
+						background: $main-color;
+					}
+					&:before{
+						top: -5px;
+					}
+					&:after{
+						bottom: -5px;
+					}
+				}
+			}
+		}
+	}
+
+}
+
 
 
 @import "animation";
