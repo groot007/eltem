@@ -23,6 +23,27 @@ $(function() {
 
 $(".phone").mask("+7(999) 999-99-99"); // mask for phone number
 
+// email to buffer
+var clipboard = new Clipboard('header .email');
+  // После того как происходит загрузка флеш файла
+    clipboard.on("success", function(client, args) {
+      console.log(1);
+      $("header .cb-message").animate({
+        opacity : 1
+      }, 100, function(){
+        setTimeout(function(){
+            $("header .cb-message").animate({
+            opacity : 0
+          }, 1000);
+        },1000);
+
+      });
+    });
+    clipboard.on('error', function(e) {
+      console.error('Не удалось скопировать email');
+  });
+// end
+
 // pulse Animation  ==================
 	$('.pulse, .btn').each(function() {
     var $this = $(this);
@@ -52,6 +73,62 @@ $(".phone").mask("+7(999) 999-99-99"); // mask for phone number
               }, 3000)
   });
 // end  ==================
+
+// popup with form
+$('.popup-with-form').magnificPopup({
+    type: 'inline',
+    preloader: false,
+    focus: '#name',
+
+      // When elemened is focused, some mobile browsers in some cases zoom in
+      // It looks not nice, so we disable it:
+      callbacks: {
+        beforeOpen: function() {
+          if($(window).width() < 700) {
+            this.st.focus = false;
+          } else {
+            this.st.focus = '#name';
+          }
+        }
+      }
+    });
+// end
+
+
+// scroll-to-id
+$("a.to-id").mPageScroll2id({
+    offset: 0,
+    scrollEasing: "easeInOutQuint",
+    pageEndSmoothScroll: true,
+    highlightClass: "highlighted",
+  });
+//end
+
+
+
+// gallery license
+$(".certificate .gallery").magnificPopup({
+  type: 'image',
+  delegate: 'a',
+  closeOnContentClick: true,
+  closeBtnInside: false,
+  fixedContentPos: true,
+    mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+    image: {
+      verticalFit: true
+    },
+    gallery: {
+      enabled: true
+    },
+    zoom: {
+      enabled: true,
+        duration: 300,
+         // don't foget to change the duration also in CSS
+      }
+    });
+// end
+
+
 
 // gallery in slider
 $('.equip-unit-slider').each(function(indx){
@@ -160,11 +237,31 @@ $(".example-works .works-slider").slick({
 // brand slider
 $(".statistic .slider-brand").slick({
     arrows: true,
+    // dragable: true,
     infinite: true,
-    swipe: false,
+    // swipe: false,
     nextArrow: '<i class="fa fa-angle-right"></i>',
     prevArrow: '<i class="fa fa-angle-left"></i>',
     waitForAnimate: false,
+  });
+// end
+
+// brand slider
+$(".our-team .team-slider").slick({
+    arrows: true,
+    // dragable: true,
+    infinite: true,
+    dots: true,
+    // swipe: false,
+    nextArrow: '<i class="fa fa-angle-right"></i>',
+    prevArrow: '<i class="fa fa-angle-left"></i>',
+    waitForAnimate: false,
+    customPaging: function(slider, i) {
+      var slide = $(slider.$slides[i]).find("img").attr('src');
+      var div = slide.replace(/.{1,}\./, "");
+      var thumb = slide.replace(/\..{1,}/, "");
+      return '<a class="picture"><img src="' + thumb +'.'+ div +'"></a>';
+    },
   });
 // end
 
