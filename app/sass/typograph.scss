@@ -38,10 +38,26 @@ p{
 h1{
   font-size: 44px;
   line-height: 48px;
+  @include medium{
+    font-size: 40px;
+    line-height: 44px;
+  }
+  @include custom{
+    font-size: 24px;
+    line-height: 30px;
+  }
 }
 h3{
   font-size: 26px;
   line-height: 34px;
+  @include medium{
+    font-size: 24px;
+    line-height: 40px;
+  }
+  @include custom{
+    font-size: 18px;
+    line-height: 22px;
+  }
 }
 
 h2{
@@ -51,6 +67,15 @@ h2{
   font-weight: 700;
   color: #333;
   display: inline-block;
+  @include medium{
+    font-size: 36px;
+    line-height: 40px;
+  }
+  @include custom{
+    padding: 0 15px;
+    font-size: 24px;
+    line-height: 28px;
+  }
   &.underline{
 
     &.light{
@@ -69,6 +94,12 @@ h2{
       width: 115px;
       border-left: 10px solid $main-darker;
       height: 6px;
+      @include small{
+        right: 0;
+      }
+      @include custom{
+         right: 0px;
+      }
     }
   }
 }
@@ -299,10 +330,18 @@ input[type="text"],input[type="phone"]{
 
 .tabs{
   margin-top: 80px;
+  @include custom{
+    margin-top: 30px;
+  }
   .corner-square{
     padding: 10px 0 0 10px;
     margin-left: 10px;
-
+    @include medium{
+      padding:  0;
+    }
+  @include custom{
+    margin-bottom: 20px;
+  }
     &:before{
       transition: all .4s ease-in-out;
     }
@@ -340,6 +379,9 @@ input[type="text"],input[type="phone"]{
         padding: 10px 45px;
         color: #000;
         background: $border-color;
+        @include medium{
+          padding: 10px 5px;
+        }
       }
     }
    &.active{
@@ -374,6 +416,9 @@ input[type="text"],input[type="phone"]{
         background: transparent;
         border: 1px solid $main-color;
         color: $main-color;
+        @include medium{
+          padding: 10px 5px;
+        }
         // &:before{
         //   display: inline-block;
         //   height: 100%;
@@ -402,6 +447,9 @@ input[type="text"],input[type="phone"]{
   position: relative;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+  @include custom{
+    margin: 20px 0;
+  }
   &:hover{
     &:before{
       left: -55px;
@@ -466,9 +514,12 @@ input[type="text"],input[type="phone"]{
       color: #fff;
       z-index: 999;
       transition: all .3s ease-in-out;
-      // @include custom{
-      //   margin-top: -45px;
-      // }
+      @include custom{
+        font-size: 34px;
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+      }
       &:hover{
         background: $main-darker;
       }
@@ -504,12 +555,18 @@ form{
       width: 290px;
       margin: 15px auto;
       position: relative;
+      @include custom{
+        width: 100%;
+      }
       .fa{
         position: absolute;
         right: 10px;
         top: 10px;
         color: #999;
         font-size: 24px;
+        @include custom{
+          top: 5px;
+        }
       }
     }
     input{
@@ -519,10 +576,17 @@ form{
       padding-right: 40px;
       // margin-bottom: 15px;
       display: block;
+      @include custom{
+        height: 40px;
+      }
     }
     button{
       width: 250px;
       margin: 35px auto 10px auto;
+      @include custom{
+        width: 100%;
+        line-height: 20px;
+      }
     }
   }
 
@@ -538,6 +602,10 @@ form{
     left: 0;
     top: 0;
     z-index: -1;
+    @include custom{
+      width: 150px;
+      height: 150px;
+    }
   }
 }
 
@@ -549,9 +617,9 @@ form{
     /* Chrome 19+ & Safari 6+ */
 }
 
-.hidden-s{
-    display: none;
-  }
+.hidden-s, .hidden{
+  display: none;
+}
 // popup
 .pop-up{
   // display: none;
@@ -572,9 +640,12 @@ form{
     width: 360px;
     height: auto;
     margin: 0 auto;
+    text-align: center;
     padding: 40px 50px;
-    background: #fff;
+    border: 1px solid #fff;
+    background: rgba(255,255,255, .4);
     position: relative;
+
     @include custom {
       width: 280px;
       padding: 10px;
@@ -583,9 +654,10 @@ form{
       font-size: 24px;
       text-align: center;
       line-height: 30px;
+      color: #fff;
       font-weight: 600;
       margin-bottom: 30px;
-      text-transform: uppercase;
+      // text-transform: uppercase;
     }
     input{
       border: 1px solid #ddd;
@@ -607,7 +679,7 @@ form{
     }
     p{
       text-align: center;
-      color: #000;
+      color: #fff;
       font-size: 14px;
     }
     .mfp-close{
@@ -665,3 +737,43 @@ form{
 }
 
 //end
+p.success{
+  background: rgba(0,0,0,.8);
+    padding: 15px;
+    position: absolute;
+}
+
+label.error{
+  display: none !important;
+  color: #f00;
+  max-width: 100%
+}
+input.error{
+  border: 1px solid #f00 !important;
+}
+
+.mfp-content form.equip-form-popup{
+  width: 60%;
+  background: #d4d4d4;
+  &:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .left-part, .right-part{
+    float: left;
+    width: 50%;
+  }
+  .right-part{
+    color: #000;
+    text-align: center;
+    .form-part{
+      padding: 20px;
+      background: #c2c2c2;
+      border: 1px solid #fff;
+      .group-input{
+        width: 100%;
+      }
+    }
+  }
+}

@@ -7,8 +7,10 @@
 // notimport("../libs/circlefull.min.js");
 // import("../libs/scrollToId/jquery.malihu.PageScroll2id.js");
 // import("../libs/magnific-popup/js/jquery.magnific-popup.min.js");
+// notimport("../libs/validate/jquery.validate.js");
 // notimport("../libs/countdown/jquery.countdown.min.js");
 // import("../libs/clipboard.min.js");
+// import("../libs/matchHeight.js");
 
 $(function() {
 //  hide input, textarea placeholder  ==================
@@ -22,6 +24,40 @@ $(function() {
 // end  ==================
 
 $(".phone").mask("+7(999) 999-99-99"); // mask for phone number
+
+// dynamic popup btn
+$(".equip-popup").on("mousedown", function(){
+  var $this = $(this),
+      popup = $("#equip-popup");
+      slide = $this.closest(".slide");
+      text = slide.find(".equip-inf h3").text();
+      img = slide.find(".preview .equip-unit-slider a").eq(0).find("img").attr("src");
+  // console.log(text, img)
+  popup.find(".wrap-equip h3").text(text);
+  popup.find(".wrap-equip img").attr("src", img);
+
+});
+
+// end
+
+
+
+
+
+// slide toogle details equip
+  $(".show-details").on("click", function(e){
+    e.preventDefault();
+    var $this = $(this);
+    var angle = $this.find(".angle");
+    if(angle.hasClass("angle-down")){
+      angle.removeClass("angle-down").addClass("angle-up");
+    }else{
+      angle.removeClass("angle-up").addClass("angle-down");
+    }
+    $this.next().slideToggle();
+  });
+// end
+
 
 // email to buffer
 var clipboard = new Clipboard('header .email');
@@ -75,11 +111,11 @@ var clipboard = new Clipboard('header .email');
 // end  ==================
 
 // popup with form
-$('.popup-with-form').magnificPopup({
+$('.popup-with-form, .equip-popup').magnificPopup({
     type: 'inline',
     preloader: false,
     focus: '#name',
-
+    // modal: true,
       // When elemened is focused, some mobile browsers in some cases zoom in
       // It looks not nice, so we disable it:
       callbacks: {
@@ -128,6 +164,17 @@ $(".certificate .gallery").magnificPopup({
     });
 // end
 
+// toutube popup
+  $('.popup-youtube').magnificPopup({
+    disableOn: 700,
+    type: 'iframe',
+    mainClass: 'mfp-fade',
+    removalDelay: 160,
+    preloader: false,
+
+    fixedContentPos: false
+  });
+// end
 
 
 // gallery in slider
@@ -161,11 +208,27 @@ $(".equip-slider").slick({
     nextArrow: '<i class="fa fa-angle-right"></i>',
     prevArrow: '<i class="fa fa-angle-left"></i>',
     waitForAnimate: false,
+    adaptiveHeight: true,
+    //  responsive: [{
+    //   breakpoint: 500,
+    //   settings: {
+    //     adaptiveHeight: true,
+    //   }
+    // }]
   }).on({
   beforeChange: function(event, slick, currentSlide, nextSlide) {
-    $(".equipment .tabs .tab").removeClass("active");
+    var tab = $(".equipment .tabs .tab");
+    var spSlide = $(".sp-slider .sp-slide");
+    spSlide.addClass("hidden");
+    spSlide.each(function(i){
+      if(+$(this).data("toslide") - 1 === nextSlide){
+        $(this).removeClass("hidden");
+      }
+    });
 
-    $(".equipment .tabs .tab").each(function(i){
+    tab.removeClass("active");
+
+    tab.each(function(i){
       if(+$(this).data("toslide") - 1 === nextSlide){
         $(this).addClass("active");
       }
@@ -200,7 +263,7 @@ $(".equip-slider").slick({
     responsive: [{
       breakpoint: 500,
       settings: {
-        dots: false,
+        // dots: false,
       }
     }]
   });
@@ -264,5 +327,77 @@ $(".our-team .team-slider").slick({
     },
   });
 // end
+
+
+// FORM SUBMIT
+
+    $('form').submit(function(e) {
+        e.preventDefault();
+        var form = $(this);
+        var data = {};
+        form.find("input").each(function() {
+                if ($(this).val() == "") {
+                    return false;
+                }
+            })
+
+            form.find('input').not('input[type=checkbox]').each(function() {
+                var $el = $(this);
+                var key = $el.attr('name');
+                if (key) {
+                    data[key] = $el.val();
+                }
+            });
+            form.find('input[type=checkbox]').each(function() {
+                if ($(this).prop("checked")) {
+                    var key = $(this).attr('name');
+                    if (!data[key]) {
+                        data[key] = [];
+                    }
+                    if (key && $(this).val()) {
+                        data[key].push($(this).val());
+                    }
+                }
+            });
+            var yaCounter = new Ya.Metrika();
+            var yaCounterVal = yaCounter.getClientID();
+            data['ClientidYM'] = yaCounterVal;
+            var formURL = 'integration_vtiger/post.php';
+            formURL = formURL.replace('//', '/');
+
+
+            $.post(formURL, data).done(function(done) {
+                    form.find('input').not('input[type=hidden], input[type=checkbox]').each(function() {
+                        $(this).val('');
+                        valid = false;
+                    });
+                    if (form.hasClass("pop-up")) {
+                        form.addClass("answer");
+                        form.find("h2").css("display", "none");
+                        form.find("fieldset").css("display", "none");
+                        form.find(".success").removeClass("hidden-s");
+                        setTimeout(function() {
+                            $(".mfp-close").trigger("click");
+                        }, 5000)
+                    } else {
+                        form.find(".success").removeClass("hidden-s");
+                        setTimeout(function() {
+                            form.find(".success").addClass("hidden-s");
+                        }, 5000)
+                    }
+                })
+                .fail(function() {
+                    alert('not good');
+                });
+            return false;
+    });
+
+// end
+
+
+// mathcHeight
+$("li .picture").matchHeight({ property: 'min-height' });
+// end
+
 
 });

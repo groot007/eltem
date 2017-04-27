@@ -7,12 +7,33 @@ header{
 	.top-head{
 		height: 100px;
 		line-height: 100px;
+		@include extraSmall{
+			height: auto;
+			line-height: 20px;
+		}
+		@include custom{
+			// text-align: center;
+			height: auto;
+			line-height: 10px;
+		}
 		.logo{
 			img{
 				display: inline-block;
 				vertical-align: middle;
 				width: 100px;
 				margin-top: -10px;
+				@include small{
+					width: 80px;
+				}
+			}
+		}
+		.text-right{
+			@include medium{
+			text-align: right;
+
+			}
+			@include extraSmall{
+				text-align: center;
 			}
 		}
 		[class*="col-"]{
@@ -32,6 +53,13 @@ header{
 			display: inline-block;
 			vertical-align: middle;
 			line-height: 18px;
+			@include medium{
+				width: 160px;
+			}
+			@include small{
+				font-size: 12px;
+				width: 120px;
+			}
 		}
 
 		.email{
@@ -40,6 +68,14 @@ header{
 			font-weight: 800;
 			vertical-align: middle;
 			color: $email-color;
+			@include small{
+				font-size: 16px;
+				line-height: 22px;
+			}
+			@include custom{
+				display: block;
+				margin: 10px 0;
+			}
 			&:after{
 				content: "";
 				display: block;
@@ -77,6 +113,16 @@ header{
 			color: #000;
 			margin: 0 15px 0 -40px;
 			vertical-align: middle;
+			@include extraSmall{
+				margin: 0;
+			}
+			@include custom{
+				display: block;
+				margin: 10px 0;
+			}
+			@include small{
+				font-size: 20px;
+			}
 			&:after{
 				content: "";
 				display: block;
@@ -101,6 +147,17 @@ header{
 			padding: 13px 30px;
 			vertical-align: middle;
 			line-height: 10px;
+			@include small{
+				font-size: 14px;
+				line-height: 18px;
+				padding: 8px 15px;
+			}
+			@include extraSmall{
+				margin: 10px 0;
+				float: left;
+				// display: block;
+			}
+
 		}
 	}
 	.main-part{
@@ -112,18 +169,41 @@ header{
 		height: auto;
 		h1,h3{
 			color: $main-darker;
+			@include custom{
+				text-align: center;
+			}
 		}
 		h1{
 			margin-top: 60px;
 			margin-bottom: 30px;
+			@include medium{
+				margin-top: 30px;
+				margin-bottom: 15px;
+			}
+			@include custom{
+				margin: 15px 0;
+			}
 		}
 		h3{
 			font-weight: 600;
+
 		}
 		.menu-nav{
 			margin-top: 75px;
 			margin-bottom: 30px;
+			@include medium{
+				margin-top: 30px;
+				margin-bottom: 15px;
+			}
+			@include custom{
+				margin: 20px 0 0 0;
+				text-align: center;
+			}
 			li{
+				@include custom{
+					display: inline-block;
+					margin-left: 10px;
+				}
 				a{
 					display: inline-block;
 					padding: 5px 20px 5px 15px;;
@@ -153,12 +233,28 @@ header{
 			line-height: 62px;
 			font-weight: 800;
 			margin-bottom: 12px;
+			@include medium{
+				font-size: 48px;
+			}
+			@include custom{
+				line-height: 30px;
+				text-align: center;
+				font-size: 26px;
+			}
+		}
+		.head-menu{
+			@include custom{
+				text-align: center;
+			}
 		}
 		.works-time{
 			font-weight: 600;
 			font-size: 14px;
 			color: $main-darker;
 			margin-bottom: 60px;
+			@include custom{
+				margin-bottom: 20px;
+			}
 		}
 		.btn{
 			display: inline-block;
@@ -167,10 +263,27 @@ header{
 			width: 200px;
 			text-align: center;
 			margin-bottom: 100px;
+			@include medium{
+				width: 160px;
+				line-height: 20px;
+				font-size: 12px;
+				padding: 15px 5px;
+				margin-bottom: 40px;
+			}
+			@include custom{
+				font-size: 14px;
+				line-height: 1px;
+				padding: 5px;
+				margin-bottom: 20px;
+			}
 			&.bordered{
 				line-height: 12px;
 				font-weight: 600;
 				padding: 15px 20px;
+				@include medium{
+				// width: 160px;
+				padding: 15px 5px;
+				}
 			}
 			&.with-icon{
 				position: relative;
@@ -200,6 +313,10 @@ header{
 						line-height: 45px;
 						height: 100%;
 						position: relative;
+						@include custom{
+							text-align: center;
+							line-height: 20px;
+						}
 						&:before{
 							content: "";
 							display: block;
@@ -228,6 +345,14 @@ header{
 			  background-size: cover;
 			padding-top: 1px;
     		margin-top: 75px;
+    		@include medium{
+    			width: 512px;
+    			margin-left: 30px;
+				height: 334px;
+    		}
+    		@include small{
+    			display: none;
+    		}
 			.video{
 				width: 488px;
 				height: 306px;
@@ -235,6 +360,12 @@ header{
 				margin-left: 65px;
 				background: #000;
 				overflow: hidden;
+				@include medium{
+					margin-left: 52px ;
+					margin-top: 50px;
+    			width: 410px;
+				height: 206px;
+    		}
 				video{
 					width: 110%;
 					margin-left: -5%;
@@ -247,8 +378,10 @@ header{
 
 .equipment{
 	padding: 80px  0 0 0;
-	background: url(../img/how-it-works-bg.jpg) repeat-x center bottom;
-
+	@include custom{
+		padding: 20px 0 0 0;
+		// background-size: 100% 440px;
+	}
 	.equip-slider{
 		width: 100%;
 		position: relative;
@@ -295,17 +428,27 @@ header{
 				clear: both;
 			}
 		}
+
 		.preview{
 			margin-left: 3%;
 			margin-right: 4%;
 			width: 45%;
 			float: left;
+			@include custom{
+				margin: 0;
+				width: 100%;
+				float: none;
+			}
 		}
 		.equip-inf{
 			width: 45%;
 			float: left;
 			text-align: left;
-
+			@include custom{
+				width: 100%;
+				float: none;
+				text-align: center;
+			}
 			h3{
 				color: $main-darker;
 				font-size: 30px;
@@ -322,9 +465,16 @@ header{
 				line-height: 28px;
 				font-size: 14px;
 				padding: 0 40px 0 0;
+				@include custom{
+					text-align: left;
+					padding: 0;
+				}
 			}
 			ul{
 				margin-top: 15px;
+				@include custom{
+					text-align: left;
+				}
 				li{
 					margin-bottom: 15px;
 					color: #999;
@@ -341,12 +491,18 @@ header{
 			}
 			.deskr-block{
 				padding: 25px 0;
-
+				@include custom{
+					padding: 25px 0 0 0;
+				}
 				.btn{
 					width: 200px;
 					text-align: center;
 					font-size: 18px;
 					margin-top: 30px;
+					@include custom{
+						margin: 20px auto;
+						display: block;
+					}
 				}
 			}
 		}
@@ -365,6 +521,11 @@ header{
 			.slick-dots{
 				width: 100%;
 				margin-top: 15px;
+				&:after{
+					content: "";
+					display: block;
+					clear: both;
+				}
 				li{
 					width: 30%;
 					margin-right: 3%;
@@ -386,7 +547,10 @@ header{
 						display: inline-block;
 						border: 1px solid $border-color;
 						transition: all .4s ease-in-out;
-
+						@include custom{
+							height: 120px;
+							overflow: hidden;
+						}
 						&:before{
 							display: inline-block;
 						    height: 100%;
@@ -415,15 +579,220 @@ header{
 				}
 			}
 		}
+
 	}
 }
 
 
-.how-it-works{
+.sp-slider{
+	.last-part{
+		padding: 60px 0 50px 0;
+		@include custom{
+			padding: 20px 0;
+		}
+	}
 
-     padding: 60px 0 50px 0;
+	.sp-slide.video-coll{
+		padding-bottom: 40px;
+	}
+	.two-half{
+		padding: 30px 0;
+		h2{
+			text-align: left;
+			@include custom{
+				text-align: center;
+			}
+			&:after{
+				right: auto;
+				left: 5px;
+				@include custom{
+					right: 0;
+					left: auto;
+				}
+			}
+		}
+		ol{
+			text-align: left;
+			margin-top: 30px;
+			// padding-left: 20px;
+			list-style-position: inside;
+			list-style-type: decimal;
+			@include custom{
+				margin-bottom: 10px;
+			}
+		}
+		.wrap-img{
+			width: 100%;
+			margin-top: 10%;
+			height: 500px;
+			text-align: center;
+			@include custom{
+				margin-top: 10px;
+				height: auto;
+			}
+			&:before{
+				content: "";
+				display: inline-block;
+				height: 100%;
+				// width: 1px;
+				vertical-align: middle;
+				@include extraSmall{
+					display: none;
+				}
+			}
+			img{
+				vertical-align: middle;
+				display: inline-block;
+			}
+		}
+		.half-grey{
+			width: 42%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			background: #f1f1f1;
+			@include extraSmall{
+				width:100%;
+			}
+			@include custom{
+				display: none;
+				width: 100%;
+			}
+		}
+	}
+     .with-bg-img{
+     	background: url(../img/how-it-works-bg.jpg) repeat-x center center;
+     	-webkit-background-size: cover;
+     	-o-background-size: cover;
+     	background-size: cover;
+     }
+
+
+     .details-prop{
+			padding: 30px 0;
+			.show-details{
+				display: inline-block;
+				width: 100%;
+				height: 50px;
+				line-height: 50px;
+				padding: 0px  0 0 20px;
+				text-align: left;
+				border: 1px solid $main-color;
+				color:  $main-color;
+				text-transform: uppercase;
+				@include custom{
+					height: 35px;
+					line-height: 35px;
+					font-size: 14px;
+				}
+				.angle{
+					float: right;
+					width: 50px;
+					background: $main-color;
+					height: 100%;
+					position: relative;
+					@include custom{
+						width: 30px;
+					}
+					&:before{
+						content: "";
+						position: absolute;
+					    left: 50%;
+					    top: 50%;
+					    margin-left: -8px;
+					    margin-top: -10px;
+					    display: block;
+					    width: 15px;
+					    height: 15px;
+					    background: transparent;
+					    border-left: 1px solid;
+					    border-bottom: 1px solid;
+					    transition: all .4s ease-in-out;
+					    border-color: #fff;
+
+					}
+					&.angle-down{
+						&:before{
+							transform: rotate(-45deg);
+						}
+
+					}
+					&.angle-up{
+						&:before{
+							margin-left: -6px;
+					    	margin-top: -3px;
+							transform: rotate(135deg);
+						}
+					}
+				}
+
+			}
+			.details{
+				padding: 20px 0 0 0;
+				display: none;
+				&:after{
+					content: "";
+					display: block;
+					clear: both;
+				}
+				ol{
+					// float: left;
+					// width: 50%;
+					padding-left: 30px;
+					// margin-right: 4%;
+					list-style-type: decimal;
+					list-style-position: inside;
+					text-align: left;
+					color: #888;
+					-moz-column-count: 2; /* Firefox */
+					  -webkit-column-count: 2; /* Safari and Chrome */
+					  column-count: 2;
+					height: 350px;
+					font-size: 14px;
+					line-height: 28px;
+					@include medium{
+						line-height: 24px;
+					}
+					@include small{
+						padding-left: 0;
+					}
+					@include extraSmall{
+						height: auto;
+						-moz-column-count: 1; /* Firefox */
+					  -webkit-column-count: 1; /* Safari and Chrome */
+					  column-count: 1;
+					}
+					ul{
+						list-style-type: disc;
+						list-style-position: inside;
+						li{
+							// position: relative;
+							span{
+								position: relative;
+								left: -15px;
+							}
+						}
+					}
+					@include custom{
+						float: none;
+						width: 100%;
+					}
+					span{
+						position: relative;
+						// left: -15px;
+					}
+					li{
+						// margin-bottom: 5px;
+					}
+				}
+			}
+		}
      h2{
      	line-height: 46px;
+     	@include custom{
+     		line-height: 26px;
+     	}
      }
 	.video-wrap{
 		width: 80%;
@@ -433,8 +802,21 @@ header{
 		padding: 10px;
 		margin: 50px auto 0 auto;
 		text-align: center;
+		@include custom{
+			width: 100%;
+		}
 		iframe{
 			display: inline-block;
+			max-width: 100%;
+			@include custom{
+				width: 100%;
+				min-height: 250px;
+				height: auto;
+			}
+		}
+		@include small{
+			width: 100%;
+			height: auto;
 		}
 
 	}
@@ -468,7 +850,9 @@ header{
 	    padding: 90px 0;
 	    width: 100%;
 	    position: relative;
-
+	@include custom{
+		padding: 30px 0;
+	}
 	.col-catalog{
 		position: static;
 	}
@@ -483,8 +867,14 @@ header{
 
 .example-works{
 	padding: 70px 0;
+	@include custom{
+		padding: 25px 0;
+	}
 	h2{
 		font-size: 42px;
+		@include custom{
+			font-size: 24px;
+		}
 		&:after{
 			right: -10px;
 		}
@@ -494,6 +884,9 @@ header{
 		margin-top: 40px;
 		padding-right: 100px;
 		color: #666;
+		@include custom{
+			padding-right: 0px;
+		}
 		li{
 			margin-bottom: 15px;
 			padding: 0 0 0 35px;
@@ -522,6 +915,9 @@ header{
 .reviews{
 	padding: 80px 0;
 	background: #f6f6f6;
+	@include custom{
+		padding: 25px 0;
+	}
     blockquote{
     	margin: 75px auto 120px auto;
     	font-size: 20px;
@@ -532,6 +928,11 @@ header{
     	padding-left: 30px;
     	position: relative;
     	z-index: 1;
+    	@include extraSmall{
+    		width: 100%;
+    		margin: 45px auto 50px auto;
+    		font-size: 14px;
+    	}
     	.fa{
     		z-index: -1;
     		position: absolute;
@@ -539,6 +940,11 @@ header{
     		left: -10px;
     		top: -40px;
     		color: #d6d6d6;
+    		@include custom{
+    			left: 10px;
+    			top: -10px;
+    			font-size: 40px;
+    		}
     	}
     }
 	.video-wrap{
@@ -546,7 +952,9 @@ header{
 		width: 93%;
 		z-index: 1;
 		height: 300px;
-
+		@include custom{
+			width: 100%;
+		}
 		iframe{
 			max-height: 100%;
 			max-width: 100%;
@@ -555,11 +963,20 @@ header{
 	ul{
 		text-align: left;
 		padding-left: 10px;
+		@include extraSmall{
+			margin-bottom: 20px;
+		}
+		@include custom{
+			margin-bottom: 20px;
+		}
 		li{
 			strong{
 				display: inline-block;
 				width: 20%;
 				margin-right: 20px;
+				@include custom{
+					display: inline;
+				}
 			}
 		}
 	}
@@ -567,14 +984,29 @@ header{
 
 .services{
 	padding: 60px 0;
+	@include extraSmall{
+		padding: 30px 0;
+	}
+	@include custom{
+		padding: 25px 0px;
+	}
 	h2.underline{
 		&:after{
 			right: -30px;
+			@include extraSmall{
+				right: 0;
+			}
+			@include custom{
+				right: 0;
+			}
 		}
 	}
 	h2+p{
 		margin: 70px 0;
 		font-weight: 700;
+		@include custom{
+			margin: 35px 0;
+		}
 	}
 	.services-items{
 		width: 100%;
@@ -583,6 +1015,15 @@ header{
 			text-align: center;
 			float: left;
 			margin-bottom: 10px;
+			@include extraSmall{
+				width: 50%;
+				margin-bottom: 30px;
+				// margin-left: 4%;
+			}
+			@include custom{
+				width: 50%;
+				margin-bottom: 30px;
+			}
 			h5{
 				font-size: 16px;
 				font-weight: 600;
@@ -590,6 +1031,9 @@ header{
 				margin: 0 auto;
 				line-height: 20px;
 				color: $main-color;
+				@include extraSmall{
+					font-size: 14px;
+				}
 			}
 			.square-wrap{
 				transform: rotate(45deg);
@@ -638,6 +1082,12 @@ header{
 	.btn{
 		width: 30%;
     	margin-top: 60px;
+
+    	@include extraSmall{
+    		width: 70%;
+    		line-height: 16px;
+    		margin: 10px auto;
+    	}
 	}
 }
 
@@ -648,9 +1098,22 @@ header{
 	  -o-background-size: cover;
 	  background-size: cover;
 	color: #fff;
+	@include extraSmall{
+		padding: 30px;
+	}
+	@include custom{
+		padding: 25px 0;
+	}
 	h2{
       color: #fff;
       margin: 50px 0;
+      @include extraSmall{
+      	margin: 15px 0;
+      }
+      @include custom{
+      	text-align: center;
+      	margin: 0px 0 30px 0;
+      }
       &:after{
       	right: -20px;
       }
@@ -662,6 +1125,15 @@ header{
 		text-align: left;
 		font-size: 18px;
 		position: relative;
+		@include extraSmall{
+			width: 100%;
+		}
+		@include custom{
+			width: 100%;
+			padding: 30px 0px 50px 90px;
+			line-height: 18px;
+			font-size: 14px;
+		}
 		&:after{
 			content: "";
 			display: block;
@@ -671,6 +1143,10 @@ header{
 			left: 35px;
 			top: 55px;
 			background: url(../img/icons/icon-coffee.png) no-repeat center center;
+			@include custom{
+				top: 30px;
+				left: 10px;
+			}
 		}
 	}
 	form{
@@ -678,17 +1154,40 @@ header{
 		width: 90%;
 		display: inline-block;
 		padding: 80px 30px;
+		@include extraSmall{
+			width: 100%;
+		}
+		@include custom{
+			width: 100%;
+			padding: 25px 10px;
+		}
+		 .group-input input{
+			@include custom{
+				font-size: 14px;
+			}
+		}
 		p{
 			font-weight: 700;
 			font-size: 20px;
 			margin-bottom: 25px;
+			@include custom{
+				font-size: 16px;
+				margin-bottom: 15px;
+			}
 			&.phone{
 				font-size: 30px;
+				@include custom{
+
+					font-size: 22px;
+				}
 			}
 			.upper{
 				display: inline-block;
 				text-transform: uppercase;
 				margin-bottom: 60px;
+				@include custom{
+					margin-bottom: 0px;
+				}
 			}
 		}
 		button{
@@ -700,7 +1199,9 @@ header{
 
 .steps{
 	padding: 80px 0 60px 0;
-
+	@include custom{
+		padding: 25px 0;
+	}
 	h2{
 		margin-bottom: 50px;
 	}
@@ -719,6 +1220,15 @@ header{
 			margin-bottom: 20px;
 			position: relative;
 			text-align: left;
+
+			@include extraSmall{
+				text-align: center;
+				margin-bottom: 25px;
+				height: auto;
+			}
+			@include small{
+				width:100%;
+			}
 			.step-number{
 				font-size: 120px;
 				line-height: 140px;
@@ -728,6 +1238,11 @@ header{
 				// font-weight: 700;
 				color: $main-color;
 				position: relative;
+				@include extraSmall{
+					font-size: 90px;
+					margin-left: 0;
+					line-height: 110px;
+				}
 				&:after{
 					content: "";
 					width: 20px;
@@ -748,6 +1263,19 @@ header{
 				display: inline-block;
 				left: 200px;
 				top: 12px;
+				z-index: 100;
+				@include small{
+					// position: relative;
+				}
+
+				@include extraSmall{
+					left: auto;
+					top: auto;
+					text-align: center;
+					width: auto;
+					display: block;
+					position: relative;
+				}
 			}
 		}
 	}
@@ -763,6 +1291,9 @@ header{
 		background-size: cover;
 		// margin-left: 52%;
 		height: 100%;;
+		@include small{
+			display: none;
+		}
 	}
 }
 
@@ -772,6 +1303,12 @@ header{
 	-webkit-background-size: cover;
 	  -o-background-size: cover;
 	  background-size: cover;
+	@include extraSmall{
+		padding: 30px 0;
+	}
+	@include custom{
+		padding: 25px 0;
+	}
 	.va{
 		&:before{
 			display: inline-block;
@@ -790,6 +1327,14 @@ header{
 			line-height: 110px;
 			font-family: "Impact";
 			font-size: 120px;
+			@include extraSmall{
+				font-size: 80px;
+				line-height: 80px;
+			}
+			@include custom{
+				line-height: 60px;
+				font-size: 60px;
+			}
 		}
 	}
 	.statistic-wrap{
@@ -797,25 +1342,53 @@ header{
 	}
 	.left-block, .right-block{
 		float: left;
+		@include small{
+			float: none;
+		}
 	}
 	.left-block{
 		width:22%;
 		margin-right: 3%;
+		@include small{
+			width: 100%;
+		}
 		.peoples{
 			height: 400px;
 			width: 100%;
 			border: 15px solid $main-color;
 			background: #fff;
 			color: $main-color;
+			@include extraSmall{
+				height: 150px;
+			}
+			@include custom{
+				height: 150px;
+			}
 		}
 	}
 	.right-block{
 		width: 75%;
+		@include small{
+			width: 100%;
+		}
 	}
 	.right-block{
 		.top-row{
 			margin-bottom: 20px;
 			height: 190px;
+			&:after{
+				content: "";
+				width: 0;
+				display: block;
+				clear: both;
+			}
+			@include extraSmall{
+				height: 150px;
+			}
+			@include custom{
+				height: auto;
+				margin-top: 20px;
+			}
 			.years, .brands{
 				float: left;
 			}
@@ -825,6 +1398,11 @@ header{
 				height: 100%;
 				color: #fff;
 				background: $main-color;
+				@include custom{
+					margin-bottom: 20px;
+					width: 100%;
+					height: 150px;
+				}
 			}
 			.brands{
 				text-align: left;
@@ -833,11 +1411,18 @@ header{
 				height: 100%;
 				width: 67%;
 				padding: 30px 20px;
+				@include custom{
+					height: 150px;
+					width: 100%;
+				}
 				.wrap{
 					text-align: center;
 					float: left;
 					width: 30%;
 					margin-right: 10%;
+					@include custom{
+
+					}
 				}
 				.slider{
 					width: 60%;
@@ -848,6 +1433,9 @@ header{
 
 						height: 140px;
 						text-align: center;
+						@include custom{
+							height: 100px;
+						}
 						&:before{
 							display: inline-block;
 						    height: 100%;
@@ -864,15 +1452,31 @@ header{
 						background: transparent;
 						color: $main-color;
 						top: 100%;
+						@include custom{
+							top: auto;
+							bottom: 40%;
+						}
 					}
 				}
 			}
 		}
 		.bottom-row{
 			height: 190px;
+			@include extraSmall{
+				height: auto;
+			}
+			@include custom{
+				height: auto;
+			}
 			.users, .firms{
 				float: left;
 				height: 100%;
+				@include small{
+					float : none;
+				}
+				@include custom{
+					height: 150px;
+				}
 			}
 			.users{
 				background: #fff;
@@ -880,15 +1484,29 @@ header{
 				color: $main-color;
 				width: 67%;
 				margin-right: 3%;
+				@include small{
+					width: 100%;
+				}
+				@include custom{
+
+					margin-bottom: 20px;
+				}
 				.border-wrap{
 					width: 100%;
 					height: 100%;
 					border: 1px solid $main-color;
 					text-align: center;
 					padding: 0 15px;
+					@include custom{
+						text-align: center;
+						padding: 20px 0;
+					}
 					&.va{
 						&:before{
 							height: auto;
+							@include custom{
+								display: none;
+							}
 						}
 					}
 					.wrap{
@@ -905,12 +1523,22 @@ header{
 						width: 32%;
 						line-height: 26px;
 						vertical-align: top;
+						@include custom{
+							text-align: center;
+							width: 100%;
+							display: block;
+							line-height: 20px;
+							font-size: 14px;
+						}
 					}
 					.number{
 						width:66%;
 						margin-top: -5px;
 						margin-right: -20px;
 						display: inline-block;
+						@include custom{
+							width: 100%;
+						}
 					}
 				}
 			}
@@ -919,11 +1547,18 @@ header{
 				color: #fff;
 				width: 30%;
 				padding: 10px;
+				@include small{
+					width: 100%;
+				}
+
 				.border-wrap{
 					width: 100%;
 					height: 100%;
 					border: 1px solid #fff;
 					position: relative;
+					@include custom{
+						padding: 10px 0;
+					}
 					&:before, &:after{
 						content: "";
 						display: block;
@@ -949,14 +1584,37 @@ header{
 
 .our-team{
 	padding: 80px 0 0 0;
+	@include custom{
+		padding: 25px 0 0 0;
+	}
 	.deskr{
 		margin: 50px 0;
 		font-weight: 800;
 		font-size: 18px;
+		@include custom{
+			font-size: 14px;
+			margin: 30px 0;
+		}
 	}
 	.team-slider{
 		width: 90%;
 		margin: 0 auto;
+		@include extraSmall{
+			width: 100%;
+		}
+		@include custom{
+			width: 100%;
+
+		}
+		.slick-slide{
+			position: relative;
+			@include extraSmall{
+				padding-top: 130px;
+			}
+			@include custom{
+				padding-top:100px;
+			}
+		}
 		.fa{
 			top: 50%;
 		}
@@ -968,6 +1626,9 @@ header{
 				display: inline-block;
 				width: 100px;
 				margin-right: 10px;
+				 @include custom{
+				 	width: auto;
+				 }
 				&.slick-active{
 					img{
 						filter: none;
@@ -1004,12 +1665,34 @@ header{
 					  -o-filter: grayscale(100%);
 					  filter: grayscale(100%);
 					  filter: gray; /* IE 6-9 */
+					  @include custom{
+					  	max-width: 50px;
+					  }
 				}
 			}
 		}
 		.wrap-img{
 			width: 30%;
 			float: left;
+			img{
+				max-width: 100%;
+			}
+			@include extraSmall{
+				position: absolute;
+				top: 0;
+				left: 50%;
+				margin-left: -80px;
+				float: none;
+			}
+			@include custom{
+				position: absolute;
+				top: 0px;
+				left: 50%;
+				margin-left: -80px;
+				width: 150px;
+				float: none;
+
+			}
 		}
 		.about{
 			width: 70%;
@@ -1026,31 +1709,62 @@ header{
 			p{
 				margin-top: 20px;
 			}
+			@include extraSmall{
+				text-align: center;
+				width: 100%;
+				margin: 0;
+				padding: 80px  10px 10px 10px;
+			}
+			@include custom{
+				width: 100%;
+				margin: 0;
+				text-align: center;
+				padding: 80px  10px 10px 10px;
+			}
 		}
 	}
 	.after-slider{
 		margin: 50px 0 150px 0;;
 		text-transform: uppercase;
 		font-size: 18px;
+		@include custom{
+			font-size: 12px;
+			margin: 30px 0;;
+		}
 		.blue-text{
 			color: $main-color;
 			font-size: 36px;
 			font-weight: 800;
+			@include custom{
+				font-size: 22px;
+			}
 		}
 	}
 
 	.first-item, .second-item{
 		margin-bottom: 80px;
+		@include custom{
+			margin-bottom: 30px;
+		}
 		.inf{
 			margin-top: 30px;
 			padding: 10px 80px 10px 10px;
 			text-align: left;
+			@include custom{
+				padding: 10px;
+			}
 			h2{
 				margin: 20px 0;
+				@include custom{
+					margin: 0;
+				}
 			}
 			p{
 				margin-bottom: 20px;
 				line-height: 36px;
+				@include custom{
+					line-height: 25px;
+				}
 			}
 		}
 		&:after{
@@ -1063,20 +1777,36 @@ header{
 	.first-item{
 		.inf{
 			margin-right: 45px;
+			@include custom{
+				margin-right: 20px;
+			}
 		}
 	}
 	.second-item{
 		.inf{
 			margin-left: 	45px;
 			padding: 15px 80px 15px 15px;
+			@include custom{
+				margin-left: 35px;
+			}
+
 		}
 	}
 }
 .privilege{
 	margin-top: 40px;
+	@include custom{
+		margin-top: 0px;
+	}
 	.privilege-list{
 		margin-top: 	150px;
 		text-align: center;
+		@include extraSmall{
+			margin-top: 40px;
+		}
+		@include custom{
+			margin-top: 40px;
+		}
 		&:after{
 			content: "";
 			display: block;
@@ -1090,12 +1820,33 @@ header{
 			// margin-left: 	10px;
 			margin-right: 	8%;
 			position: relative;
+			@include medium{
+				margin-right: 2%;
+				width: 23%;
+			}
+			@include extraSmall{
+				width: 48%;
+				margin-bottom: 20px;
+			}
+			@include custom{
+				// width: 100%;
+				margin-right: 0;
+				float: none;
+				// margin-bottom: 30px;
+				margin: 0 auto 30px auto;
+				// padding-left: 80px;
+				// margin-right: 20px;
+				// display: block;
+			}
 			.wrap-img{
 				width: 213px;
 				height: 213px;
 				position: relative;
 				background: $border-color;
 				text-align: center;
+				@include extraSmall{
+					margin: 0 auto;
+				}
 				&:before{
 					content: "";
 					display: inline-block;
@@ -1109,6 +1860,13 @@ header{
 			p{
 				margin-top: 20px;
 				line-height: 30px;
+				@include extraSmall{
+					margin-top: 10px;
+				}
+				@include custom{
+					line-height: 25px;
+					margin-top: 5px;
+				}
 			}
 			&:before{
 				content: "";
@@ -1121,9 +1879,20 @@ header{
 				left: 8%;
 				z-index: -1;
 				color: #ececec;
+				@include extraSmall{
+					display: none;
+				}
+				@include custom{
+					display: none;
+					top: 10px;
+					left: -80px;
+				}
 			}
 			&:last-child{
 				margin-right: 0;
+				@include custom{
+					margin: 0 auto;
+				}
 			}
 			&:nth-child(1){
 				.wrap-img{
@@ -1175,6 +1944,9 @@ header{
 		background: $main-color;
 		position: relative	;
 		margin-top: 	70px;
+		@include custom{
+			margin-top: 30px;
+		}
 		&:after{
 			content: "";
 			display: block;
@@ -1186,9 +1958,15 @@ header{
 		form{
 			background: none;
 			border: none;
+			@include custom{
+				padding: 15px 10px;
+			}
 			h3{
 				line-height: 30px;
 				margin-bottom: 45px;
+				@include custom{
+					margin-bottom: 20px;
+				}
 			}
 			strong{
 				font-weight: 800;
@@ -1197,6 +1975,9 @@ header{
 			.btn{
 				color: #fff;
 				border-color: #fff;
+				@include custom{
+					margin-top: 10px;
+				}
 			}
 			p{
 				font-size: 14px;
@@ -1223,6 +2004,16 @@ header{
 				right: -30px;
 				text-align: left;
 				position: absolute;
+				@include medium{
+					right: 0;
+				}
+				@include custom{
+					width: 100%;
+					right: auto;
+					left: 0;
+					bottom: 0;
+					margin-right: -150px
+				}
 				p{
 					line-height: 26px;
 				}
@@ -1237,12 +2028,20 @@ header{
 
 .certificate{
 	padding: 	60px 0;
+	@include custom{
+		padding: 30px 0;
+	}
 	h2{
 		margin-bottom: 	50px;
 	}
 	.license{
 		font-weight: 	800;
 		margin: 	30px 0;
+		@include custom{
+			line-height: 20px;
+			font-size: 14px;
+			margin: 0 0 15px 0;;
+		}
 	}
 
 	img{
@@ -1261,6 +2060,11 @@ header{
 		margin: 30px 0;
 		font-weight: 800;
 		padding: 35px 15px 45px 30px;
+		@include custom{
+			width: 300px;
+			margin: 15px auto;
+			padding: 10px 15px 45px 20px;
+		}
 	}
 }
 
@@ -1272,6 +2076,10 @@ header{
 	background-size: 	cover;
 	    color: #fff;
 	 padding: 	60px 0;
+	 @include custom{
+	 	text-align: center;
+	 	padding: 25px 0;
+	 }
 	  h2{
 	  	color: #fff;
 	  	margin-bottom: 	45px;
@@ -1280,16 +2088,32 @@ header{
 	  	font-size: 16px;
 	  	line-height: 26px;
 	  	margin-bottom: 40px;
+	  	 @include custom{
+	  	 	margin-bottom: 15px;
+	  	 	line-height: 22px;
+	  	 	text-align: left;
+	  	 }
 	  }
 	.company-items{
 		width: 100%;
 		margin-top: 70px;
+		&:after{
+			content: "";
+			display: block;
+			clear:both;
+		}
 		.item{
 			width: 44%;
 			float: left;
 			margin-left: 6%;
 			position: relative;
 			z-index: 1;
+			 @include custom{
+			 	float: none;
+			 	width: 100%;
+			 	padding-right: 30px;
+			 	margin-bottom: 50px;
+			 }
 			p{
 				line-height: 20px;
 			}
@@ -1302,6 +2126,11 @@ header{
 				position: absolute;
 				left: -25px;
 				top: -30px;
+				 @include custom{
+				 	width: 80px;
+				 	top: -20px;
+				 	height: 80px;
+				 }
 			}
 		}
 	}
@@ -1309,17 +2138,32 @@ header{
 		text-align: center;
 		width: 420px;
 		margin: 0 auto;
+		@include medium{
+			width: 100%;
+		}
+		@include custom{
+			width: 100%;
+			padding: 20px 10px;
+		}
 		h3{
 			font-size: 20px;
 			line-height: 26px;
 			margin-top: 40px;
 			margin-bottom: 120px;
+			@include custom{
+				font-size: 16px;
+				margin: 0px 0 20px 0;
+			}
 		}
 		.btn{
 			margin-top: 10px;
 		}
 		p{
 			font-size: 14px;
+			@include custom{
+				text-align: center;
+				margin: 0;
+			}
 		}
 	}
 }
@@ -1330,12 +2174,22 @@ header{
 	position: relative;
 	margin-bottom: 55px;
 	background: $main-color;
+	@include custom{
+		padding: 25px 0;
+	}
 	h2{
 		margin-bottom: 45px;
 		color: #fff;
+		@include custom{
+			margin-bottom: 20px;
+		}
 	}
 	p{
 		font-weight: 600;
+		@include custom{
+			margin-bottom: 10px;
+			font-size: 15px;
+		}
 	}
 	.arrow-down{
 		margin: 0;
@@ -1361,12 +2215,26 @@ header{
 	.cont-items{
 		width: 80%;
 		margin:  0 auto 60px auto;;
+		@include custom{
+			margin:  0 auto 0px auto;;
+			text-align: center;
+		}
 		.item{
 			width: 36%;
 			margin-left: 14%;
 			float: left;
 			text-align: left;
 			font-weight: 600;
+			@include custom{
+				display: inline-block;
+				width: 70%;
+				font-size: 14px;
+				margin-left: 20%;;
+				line-height: 20px;
+				margin-bottom: 60px;
+				// width: 90%;
+				// margin: 0 auto 50px auto;
+			}
 			&.bold{
 
 			}
@@ -1398,7 +2266,9 @@ header{
 		width: 100%;
 		height: 620px;
 		position: relative;
-
+		@include extraSmall{
+			display: none;
+		}
 	}
 	.map-img{
 			z-index: 999;
@@ -1406,6 +2276,9 @@ header{
 	margin-top: -370px;
 	height: 400px;
 	text-align: center;
+	@include extraSmall{
+			display: none;
+		}
 	img{
 		&:nth-child(1){
 			float: left;
@@ -1425,6 +2298,9 @@ header{
 footer{
 	margin-top: 100px;
 	text-align: center;
+	@include custom{
+		margin-top: 10px;
+	}
 	a{
 		border-bottom: 1px dashed $main-color;
 	}

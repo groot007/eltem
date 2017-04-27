@@ -23,7 +23,7 @@ gulp.task('scripts', function() {
 	return gulp.src(['app/js/common.js'])
 	.pipe(gulpImports())
 	.pipe(concat('scripts.min.js'))
-	.pipe(uglify())
+	// .pipe(uglify())
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({stream: true}));
 });

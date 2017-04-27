@@ -8,6 +8,11 @@
   $module_integration = new ModelIntegration();
   $query = $module_integration->generate_post_query($_POST);
 
+  // $file_name = 'index.txt';
+  // $fp = fopen($file_name, 'a');
+  // fwrite($fp, date('d.m.y h:i:s') . '  -  xsi:query:   -  ' . print_r($query, TRUE) . PHP_EOL);
+  // fclose($fp);
+
   $form_url = $module_integration->get_form_url();
 
   $welcomeMessage = '{"success":true,"result":"ok"}';
