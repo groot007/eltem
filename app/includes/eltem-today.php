@@ -30,7 +30,7 @@
 								<!-- start .wrap -->
 								<div class="wrap">
 									<span class="number">26</span>
-									<p>Лет на ринке</p>
+									<p>Лет на рынке</p>
 								</div>
 								 <!-- end .wrap -->
 							</div>
@@ -45,8 +45,12 @@
 								 <!-- end .wrap -->
 								 <!-- start .slider-brand -->
 								 <div class="slider-brand slider">
-								 	<div class="slide"><img src="img/brand-1.jpg" alt="" /></div>
-								 	<div class="slide"><img src="img/brand-1.jpg" alt="" /></div>
+								 	<div class="slide"><img src="<? echo $pathToImg; ?>brands/1.jpg" alt="" /></div>
+								 	<div class="slide"><img src="<? echo $pathToImg; ?>brands/2.jpg" alt="" /></div>
+								 	<div class="slide"><img src="<? echo $pathToImg; ?>brands/3.jpg" alt="" /></div>
+								 	<div class="slide"><img src="<? echo $pathToImg; ?>brands/4.jpg" alt="" /></div>
+								 	<div class="slide"><img src="<? echo $pathToImg; ?>brands/5.jpg" alt="" /></div>
+								 	<div class="slide"><img src="<? echo $pathToImg; ?>brands/6.jpg" alt="" /></div>
 								 </div>
 								  <!-- end .slider-brand -->
 							 </div>
@@ -61,7 +65,7 @@
 								<div class="border-wrap va">
 									<!-- start .wrap -->
 									<div class="wrap">
-										<p>Врачей ползуются
+										<p>Врачей пользуются
 											нашим
 											оборудованием
 											ПРЯМО СЕЙЧАС</p>
@@ -79,7 +83,7 @@
 									<!-- start .wrap -->
 									<div class="wrap">
 										<span class="number">247</span>
-										<p>Мед. учреждений стали нашили клиентами</p>
+										<p>Мед. учреждений стали нашими клиентами</p>
 									</div>
 									 <!-- end .wrap -->
 								</div>

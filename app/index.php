@@ -30,7 +30,17 @@
 		 <!-- /Yandex.Metrika counter -->
 
 		<!-- <div id="page-preloader"><span class="spinner"></span></div> -->
-
+		<?
+			$pathToImg = "img/";
+			$pathToVideo = "video/";
+			$email = "Lp@eltem";
+			$numberOnTop = "8 (800) 123-80-80";
+			$numberonTopClear = "88001238080";
+			$bigNumber = "8 800 513 23 63";
+			$headerBgClass = "hirurg-bg";
+			$headerH1 = "Поставка хирургического оборудования в РФ";
+			$headerDeskr = "Анализ, подбор и поставка оборудования, монтаж и ввод в эксплуатацию, сервисное сопровождение, ремонт и утилизация.";
+		?>
 		<? include("includes/header.php") ?>
 		<? include("includes/slider-equip.php") ?>
 		<? include("includes/get-catalog.php") ?>
@@ -46,43 +56,55 @@
 		<? include("includes/about-company.php") ?>
 		<? include("includes/contacts-map.php") ?>
 		<? include("includes/pop-ups.php") ?>
-
-
+		<!-- start .df-show -->
+		<div class="show-df" style="display: none;">
+			<a href="#" class="active-df">Заказать</a>
+		</div>
+		 <!-- end .df-show -->
+		<!-- start .dynamic-form -->
+		<div class="dynamic-form" id="df-popup"  style="display: none;">
+			<!-- start .df-container -->
+			<div class="df-container">
+				<!-- start .df-content -->
+				<div class="df-content">
+					<!-- start .left-side -->
+					<div class="left-side">
+						<h2>Register form</h2>
+						<span class="details">Details</span>
+					</div>
+					 <!-- end .left-side -->
+					<!-- start .right-side -->
+					<div class="right-side form-parts">
+						<!-- start .fp-1 -->
+						<div class="fp fp-1 active-el">
+						 	<h2>Form 1</h2>
+							<input type="checkbox" />
+						</div>
+						<!-- end .fp-1 -->
+						<!-- start .fp-2 -->
+						<div class="fp fp-2">
+							<h2>Form 2</h2>
+							<input type="checkbox" />
+						</div>
+						<!-- end .fp-2 -->
+						<!-- start .fp-2 -->
+						<div class="fp fp-3">
+							<h2>Form 3</h2>
+							<input type="checkbox" />
+						</div>
+						<!-- end .fp-2 -->
+						<a href="#" class="prev-fp">prev</a>
+						<a href="#" class="next-fp">Next</a>
+						<div class="fp-inf"><span class="one-of">-</span> of <span class="all-of">-</span></div>
+					</div>
+					 <!-- end .right-side -->
+				</div>
+				 <!-- end .df-content -->
+			</div>
+			 <!-- end .df-container -->
+		</div>
+		 <!-- end .dynamic-form -->
  		<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
- 		<script >
- 			ymaps.ready(init);
-			  function init () {
-			    var myMap3 = new ymaps.Map("map", {
-				    center: [54.957729, 82.949606],
-				    zoom:17,
-				    controls: ["zoomControl"]
-				  });
-			  myGeo = new ymaps.GeoObject({
-	            // Описание геометрии.
-	            geometry: {
-	                type: "Point",
-	                coordinates: [54.958529, 82.946696]
-	            },
-	            // Свойства.
-	            properties: {
-	                iconCaption: 'Оловозаводская улица, 25к4',
-	                clusterCaption: 'Заголовок',
-	            },
-	        },{
-	        	// preset: 'islands#blueDotIconWithCaption',
-	         iconLayout: 'default#image',
-			       //  // Своё изображение иконки метки.
-			        iconImageHref: '/img/icons/map-icon.png',
-			       //  // Размеры метки.
-			        iconImageSize: [56, 95],
-			       //  // Смещение левого верхнего угла иконки относительно
-			       //  // её "ножки" (точки привязки).
-			        iconImageOffset: [-25, -95]
-			     }
-			   );
-			  myMap3.geoObjects.add(myGeo);
-			};
- 		</script>
 		<script  src="js/scripts.min.js"></script>
 		<script  src="integration_vtiger/js/watch.js"></script>
 		<!-- <script  src="integration_vtiger/form.js"></script> -->

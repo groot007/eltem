@@ -201,6 +201,15 @@ input[type="text"],input[type="phone"]{
 .text-right{
   text-align: right;
 }
+.inline{
+  vertical-align: middle;
+  display: inline-block;
+}
+
+
+
+
+
 
 .corner-square{
   position: relative;
@@ -328,6 +337,26 @@ input[type="text"],input[type="phone"]{
   background-position: -410px -10px;
 }
 
+.icon.icon-greny{
+  background: transparent url(../img/icons/icon-greny.png) no-repeat center center;
+  display: inline-block;
+  width: 30px;
+  height: 38px;
+}
+
+.icon.icon-target{
+  background: transparent url(../img/icons/icon-target.png) no-repeat center center;
+  display: inline-block;
+  width: 33px;
+  height: 33px;
+}
+.icon.icon-steril{
+  background: transparent url(../img/icons/icon-steril.png) no-repeat center center;
+  display: inline-block;
+  width: 47px;
+  height: 54px;
+}
+
 .tabs{
   margin-top: 80px;
   @include custom{
@@ -407,7 +436,9 @@ input[type="text"],input[type="phone"]{
         padding: 10px 28px;
         text-align: center;
         margin-top: 10px;
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         overflow: hidden;
         border-radius: 5px;
         font-size: 16px;
@@ -416,17 +447,20 @@ input[type="text"],input[type="phone"]{
         background: transparent;
         border: 1px solid $main-color;
         color: $main-color;
+
         @include medium{
           padding: 10px 5px;
         }
-        // &:before{
-        //   display: inline-block;
-        //   height: 100%;
-        //   vertical-align: middle;
-        //   content: "";
-        // }
+  //       &:before{
+  //         content: "";
+  // display: inline-block;
+  // min-height: inherit;
+  // height: 100%;
+  // vertical-align: middle;
+  //       }
 
         span{
+
           vertical-align: middle;
         }
         &:hover, &:focus{
@@ -507,7 +541,7 @@ input[type="text"],input[type="phone"]{
       display: inline-block;
       height: 50px;
       background: $main-color;
-      top: 22%;
+      top: 100%;
       margin-top: -85px;
       font-size: 55px;
       line-height: 48px;
@@ -528,11 +562,11 @@ input[type="text"],input[type="phone"]{
         // color: #fff;
       }
       &.fa-angle-right{
-        right: -10px;
+        right: -15px;
         letter-spacing: -8px;
       }
       &.fa-angle-left{
-        left: -10px;
+        left: -15px;
       }
     }
 .slick-slide{
@@ -636,6 +670,7 @@ form{
 }
 
 .mfp-content{
+
   form{
     width: 360px;
     height: auto;
@@ -645,7 +680,19 @@ form{
     border: 1px solid #fff;
     background: rgba(255,255,255, .4);
     position: relative;
+    &#politics{
+      width: 80%;
+      margin: 30px auto;
+      .mfp-close{
+        top: -40px;
+        right: -7px;
 
+      }
+      p{
+        text-align: justify;
+        margin-bottom: 15px;
+      }
+    }
     @include custom {
       width: 280px;
       padding: 10px;
@@ -777,3 +824,65 @@ input.error{
     }
   }
 }
+
+
+// form
+.show-df{
+  position: fixed;
+  width: 200px;
+  height: 70px;
+  z-index: 999;
+  background: #ddd;
+  bottom: 300px;
+  right: 0;
+}
+
+
+.df-hide{
+  display: none;
+}
+
+.dynamic-form{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0, .5);
+  z-index: 9999;
+
+  .df-container{
+    width: 80%;
+    // height: 400px;
+    background: #fff;
+    margin: 40px auto;
+    &:after{
+        content: "";
+        display: block;
+        clear: both;
+      }
+    .fp{
+      display: none;
+    }
+     .active-el{
+      display: block;
+    }
+    .prev-fp{
+      display: none;
+      &.active-el{
+        display: block;
+      }
+    }
+    .left-side{
+      width: 20%;
+      background: #ddd;
+      float: left;
+    }
+    .right-side{
+      float: left;
+      width: 80%;
+
+    }
+  }
+}
+// end

@@ -11,6 +11,7 @@
 // notimport("../libs/countdown/jquery.countdown.min.js");
 // import("../libs/clipboard.min.js");
 // import("../libs/matchHeight.js");
+// import("../libs/dynamic-form.js");
 
 $(function() {
 //  hide input, textarea placeholder  ==================
@@ -41,7 +42,30 @@ $(".equip-popup").on("mousedown", function(){
 // end
 
 
+// menu
+    var menu = $(".top-head nav");
+    $(".resp-mnu").on("click", function(e) {
+        if (menu.hasClass("visible")) {
+            menu.removeClass("visible");
+        } else {
+            menu.addClass("visible");
+        }
 
+    });
+    var topHead = $(".top-menu");
+    var headerHeightD = $("header").height();
+    var section = $(".equipment");
+    $(window).scroll(function() {
+
+        var st = $(this).scrollTop();
+        var offsetT = section.offset().top - 70;
+        if (st >= offsetT) {
+            topHead.addClass("fixed");
+        } else if (st <= offsetT) {
+            topHead.removeClass("fixed");
+        }
+    });
+// end
 
 
 // slide toogle details equip
@@ -60,15 +84,16 @@ $(".equip-popup").on("mousedown", function(){
 
 
 // email to buffer
-var clipboard = new Clipboard('header .email');
+
+var clipboard = new Clipboard('.email');
   // После того как происходит загрузка флеш файла
     clipboard.on("success", function(client, args) {
-      console.log(1);
-      $("header .cb-message").animate({
+      console.log(client.trigger);
+      $(client.trigger).next().animate({
         opacity : 1
       }, 100, function(){
         setTimeout(function(){
-            $("header .cb-message").animate({
+             $(client.trigger).next().animate({
             opacity : 0
           }, 1000);
         },1000);
@@ -111,7 +136,7 @@ var clipboard = new Clipboard('header .email');
 // end  ==================
 
 // popup with form
-$('.popup-with-form, .equip-popup').magnificPopup({
+$('.popup-with-form, .equip-popup, .politics').magnificPopup({
     type: 'inline',
     preloader: false,
     focus: '#name',
@@ -209,32 +234,49 @@ $(".equip-slider").slick({
     prevArrow: '<i class="fa fa-angle-left"></i>',
     waitForAnimate: false,
     adaptiveHeight: true,
+      dots: false,
     //  responsive: [{
     //   breakpoint: 500,
     //   settings: {
     //     adaptiveHeight: true,
     //   }
     // }]
-  }).on({
-  beforeChange: function(event, slick, currentSlide, nextSlide) {
+  });
+
+var sliderH = $(".equip-slider .slick-active").height();
+var spSlideH = $(".sp-slider .sp-slide").eq(0).height();
+console.log(sliderH, spSlideH);
+var half = (sliderH + spSlideH) / 2;
+$(".equip-slider").find(".fa").css("top", half + "px");
+
+$(".equip-slider").on("beforeChange", function(event, slick, currentSlide, nextSlide) {
+    event.preventDefault();
+    if($(event.target).is(".equip-unit-slider.slick-slider.slick-dotted")) return;
+
+
     var tab = $(".equipment .tabs .tab");
     var spSlide = $(".sp-slider .sp-slide");
+    var spSlideH = 0;
     spSlide.addClass("hidden");
     spSlide.each(function(i){
       if(+$(this).data("toslide") - 1 === nextSlide){
         $(this).removeClass("hidden");
+        spSlideH = $(this).height();
       }
     });
+    var sliderH = $(slick.$slides[nextSlide]).height();
+    var half = (sliderH + spSlideH) / 2;
+    console.log(spSlideH, sliderH);
+    $(this).find(".fa").css("top", half + "px");
+
 
     tab.removeClass("active");
-
     tab.each(function(i){
       if(+$(this).data("toslide") - 1 === nextSlide){
         $(this).addClass("active");
       }
     });
-  }
-});
+  });
 
 // end
 
@@ -252,7 +294,7 @@ $(".equip-slider").slick({
     customPaging: function(slider, i) {
       var slide = $(slider.$slides[i]).find("img").attr('src') || $(slider.$slides[i]).find("img").attr('data-lazy') || $(slider.$slides[i]).find("img").attr('data-original');
       var div = slide.replace(/.{1,}\./, "");
-      var thumb = slide.replace(/\..{1,}/, "");
+      var thumb = slide.replace(/\..{1,3}$/, "");
       var inf = $(slider.$slides[i]).data("inf");
       if (!inf){
         inf = "Пример " + i;
@@ -267,7 +309,9 @@ $(".equip-slider").slick({
       }
     }]
   });
-
+  $(".equip-unit-slider").on("beforeChange", function(event, slick, currentSlide, nextSlide) {
+    return;
+});
 // end
 
 
@@ -322,12 +366,11 @@ $(".our-team .team-slider").slick({
     customPaging: function(slider, i) {
       var slide = $(slider.$slides[i]).find("img").attr('src');
       var div = slide.replace(/.{1,}\./, "");
-      var thumb = slide.replace(/\..{1,}/, "");
+      var thumb = slide.replace(/\..{1,3}$/, "");
       return '<a class="picture"><img src="' + thumb +'.'+ div +'"></a>';
     },
   });
 // end
-
 
 // FORM SUBMIT
 
@@ -397,7 +440,97 @@ $(".our-team .team-slider").slick({
 
 // mathcHeight
 $("li .picture").matchHeight({ property: 'min-height' });
+$(".tabs .equip-kind").matchHeight({ property: 'height' });
 // end
 
 
+});
+
+
+$(window).on("load", function(){
+  // map
+  ymaps.ready(init);
+          function init () {
+            var myMap3 = new ymaps.Map("map", {
+              center: [54.957729, 82.949606],
+              zoom:17,
+              controls: ["zoomControl"]
+            });
+          myGeo = new ymaps.GeoObject({
+                // Описание геометрии.
+                geometry: {
+                    type: "Point",
+                    coordinates: [54.958529, 82.946696]
+                },
+                // Свойства.
+                properties: {
+                    iconCaption: 'Оловозаводская улица, 25к4',
+                    clusterCaption: 'Заголовок',
+                },
+            },{
+              // preset: 'islands#blueDotIconWithCaption',
+             iconLayout: 'default#image',
+               //  // Своё изображение иконки метки.
+                iconImageHref: '/img/icons/map-icon.png',
+               //  // Размеры метки.
+                iconImageSize: [56, 95],
+               //  // Смещение левого верхнего угла иконки относительно
+               //  // её "ножки" (точки привязки).
+                iconImageOffset: [-25, -95]
+             }
+           );
+          myMap3.geoObjects.add(myGeo);
+        };
+
+  //  end
+
+
+
+  // form
+  var   mainEL = $(".dynamic-form");
+        formParts = mainEL.find(".form-parts"),
+        fpInf = mainEL.find(".fp-inf"),
+        fp = formParts.find(".fp"),
+        fpLength = fp.length,
+        activeIndex = fp.index(".fp.active-el")+1;
+  fpInf.find(".one-of").text(activeIndex);
+  fpInf.find(".all-of").text(fpLength);
+  $(".show-df .active-df").on("click", function(e){
+    e.preventDefault();
+    mainEL.removeClass("df-hide");
+  });
+  mainEL.on("click", function(e){
+    if(!$(e.target).closest(".df-container").length){
+      mainEL.addClass("df-hide");
+    }
+  });
+
+
+ $(".df-container .prev-fp").on("click", function(e){
+      e.preventDefault();
+      var active= +fpInf.find(".one-of").text(),
+          prevActive = active - 1;
+      if (prevActive <= 1 && $(".df-container .prev-fp").hasClass("active-el")){
+        $(".df-container .prev-fp").removeClass("active-el");
+      }
+      if(prevActive >= 1){
+        fp.removeClass("active-el");
+        fp.eq(prevActive - 1).addClass("active-el");
+        fpInf.find(".one-of").text(prevActive);
+      }
+  });
+   $(".df-container .next-fp").on("click", function(e){
+      e.preventDefault();
+      var active= +fpInf.find(".one-of").text(),
+          nextActive = active + 1;
+      if (nextActive > 1 && !$(".df-container .prev-fp").hasClass("active-el")){
+        $(".df-container .prev-fp").addClass("active-el");
+      }
+      if(nextActive <= fpLength){
+        fp.removeClass("active-el");
+        fp.eq(nextActive - 1).addClass("active-el");
+        fpInf.find(".one-of").text(nextActive);
+      }
+  });
+  //
 });

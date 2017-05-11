@@ -25,10 +25,10 @@
 				<div class="col-xs-12  col-sm-6 col-md-6 col-lg-6">
 					<!-- start .works-slider -->
 					<div class="works-slider slider">
-						<a href="img/example-works/example-1.jpg"><img src="img/example-works/example-1.jpg" alt="Государственные медицинские учреждения" /></a>
-						<a href="img/example-works/example-1.jpg"><img src="img/example-works/example-1.jpg" alt="Государственные медицинские учреждения" /></a>
-						<a href="img/example-works/example-1.jpg"><img src="img/example-works/example-1.jpg" alt="Государственные медицинские учреждения" /></a>
-						<a href="img/example-works/example-1.jpg"><img src="img/example-works/example-1.jpg" alt="Государственные медицинские учреждения" /></a>
+						<img src="<? echo $pathToImg; ?>example-works/example-1.jpg" alt="Государственные медицинские учреждения" />
+						<img src="<? echo $pathToImg; ?>example-works/example-1.jpg" alt="Государственные медицинские учреждения" />
+						<img src="<? echo $pathToImg; ?>example-works/example-1.jpg" alt="Государственные медицинские учреждения" />
+						<img src="<? echo $pathToImg; ?>example-works/example-1.jpg" alt="Государственные медицинские учреждения" />
 					</div>
 					 <!-- end .works-slider -->
 				</div>

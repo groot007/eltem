@@ -13,7 +13,7 @@
 					<!-- start .slide -->
 					<div class="slide">
 						<!-- start .wrap-img -->
-						<div class="wrap-img"><img src="img/team/worker-1.jpg" alt="" /></div>
+						<div class="wrap-img"><img src="<? echo $pathToImg; ?>team/worker-1.jpg" alt="" /></div>
 						 <!-- end .wrap-img -->
 						 <!-- start .about -->
 						 <div class="about">
@@ -30,7 +30,7 @@ qui officia deserunt mollit anim id est laborum.</p>
 					 <!-- start .slide -->
 					<div class="slide">
 						<!-- start .wrap-img -->
-						<div class="wrap-img"><img src="img/team/worker-2-mini.jpg" alt="" /></div>
+						<div class="wrap-img"><img src="<? echo $pathToImg; ?>team/worker-2-mini.jpg" alt="" /></div>
 						 <!-- end .wrap-img -->
 						 <!-- start .about -->
 						 <div class="about">
@@ -46,7 +46,7 @@ qui officia deserunt mollit anim id est laborum.</p>
 					 <!-- end .slide -->
 					 <div class="slide">
 						<!-- start .wrap-img -->
-						<div class="wrap-img"><img src="img/team/worker-3-mini.jpg" alt="" /></div>
+						<div class="wrap-img"><img src="<? echo $pathToImg; ?>team/worker-3-mini.jpg" alt="" /></div>
 						 <!-- end .wrap-img -->
 						 <!-- start .about -->
 						 <div class="about">
@@ -76,7 +76,7 @@ qui officia deserunt mollit anim id est laborum.</p>
 					<div class="hidden-xs col-lg-6">
 						<!-- start .wrap-img -->
 						<div class="wrap-img">
-							<img src="img/reason-block-1.jpg" alt="" />
+							<img src="<? echo $pathToImg; ?>reason-block-1.jpg" alt="" />
 						</div>
 						<!-- end .wrap-img -->
 					</div>
@@ -130,7 +130,7 @@ qui officia deserunt mollit anim id est laborum.</p>
 						<div class="hidden-xs col-lg-6">
 							<!-- start .wrap-img -->
 							<div class="wrap-img">
-								<img src="img/reason-block-2.jpg" alt="" />
+								<img src="<? echo $pathToImg; ?>reason-block-2.jpg" alt="" />
 							</div>
 							<!-- end .wrap-img -->
 						</div>

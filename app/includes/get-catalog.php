@@ -4,7 +4,7 @@
 			<div class="container">
 				<!-- start .col-lg-6 -->
 				<div class="hidden-xs  col-sm-6 col-md-6 col-lg-6 col-catalog">
-					<div class="wrap-catalog"><img src="img/catalog.png" alt="Каталог" /></div>
+					<div class="wrap-catalog"><img src="<? echo $pathToImg; ?>catalog.png" alt="Каталог" /></div>
 				</div>
 				 <!-- end .col-lg-6 -->
 				 <!-- start .col-lg-5 -->

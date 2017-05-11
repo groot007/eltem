@@ -26,7 +26,7 @@
 						<!-- start .square-wrap -->
 						<div class="square-wrap">
 							<div class="square">
-								<!-- <span class="icon icon-obstetrics"></span> -->
+								<span class="icon icon-steril"></span>
 							</div>
 						</div>
 						 <!-- end .square-wrap-->

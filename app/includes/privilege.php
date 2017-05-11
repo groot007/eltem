@@ -67,7 +67,7 @@
 	 					<!-- start .wrap-person -->
 	 					<div class="wrap-person">
 	 						<!-- start .about-person -->
-	 						<img src="img/discount-block.jpg" alt="" />
+	 						<img src="<? echo $pathToImg; ?>discount-block.jpg" alt="" />
 	 						<div class="about-person">
 	 							<p><strong>Екатерина Хонякина - </strong>Директор департамента
 								ЭЛТЕМ. Хирургия. </p>

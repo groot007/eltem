@@ -1,5 +1,5 @@
 		<!-- start .contacts -->
-		<section class="contacts">
+		<section class="contacts" id="contacts">
 			<!-- start .underline light -->
 			<h2 class="underline light">
 				Контакты
@@ -57,9 +57,9 @@
 						<!-- start .container -->
 						<div class="container">
 
-						<img src="img/pic-on-map-1.jpg" alt="" />
-						<img src="img/pic-on-map-2.jpg" alt="" />
-						<img src="img/pic-on-map-3.jpg" alt="" />
+						<img src="<? echo $pathToImg; ?>pic-on-map-1.jpg" alt="" />
+						<img src="<? echo $pathToImg; ?>pic-on-map-2.jpg" alt="" />
+						<img src="<? echo $pathToImg; ?>pic-on-map-3.jpg" alt="" />
 
 						</div>
 						 <!-- end .container -->
@@ -75,7 +75,7 @@
 				<!-- start .row -->
 				<div class="row">
 					<!-- start .col-lg-3 -->
-					<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"><a href="#">Политика конфиденциальности</a></div>
+					<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"><a href="#politics" class="politics">Политика конфиденциальности</a></div>
 					 <!-- end .col-lg-3 -->
 					 <!-- start .col-lg-6 -->
 					 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><p>2017. Все права защищены. </p></div>
